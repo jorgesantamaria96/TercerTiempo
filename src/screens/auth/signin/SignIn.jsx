@@ -1,12 +1,18 @@
-import React, { useState, useReducer } from "react";
-import { SafeAreaView, Text, StyleSheet, View, ScrollView } from "react-native";
-
-import TextInputDNI from "../../../components/TextInputDNI";
-import TextInputPass from "../../../components/TextInputPass";
+import React, { useReducer } from "react";
+import {
+  View,
+  Text,
+  Button,
+  StyleSheet,
+  TouchableOpacity,
+  Alert,
+} from "react-native";
+import { useNavigation } from "@react-navigation/native";
+import { TextInput } from "react-native-gesture-handler";
 
 const initialState = {
   dni: "",
-  password: "",
+  loading: false,
 };
 
 function reducer(state, action) {
@@ -14,81 +20,110 @@ function reducer(state, action) {
     case "setDni": {
       return { ...state, dni: action.payload };
     }
-    case "setPass": {
-      return { ...state, password: action.payload };
-    }
-    default:
+    default: {
       throw new Error();
+    }
   }
 }
 
 const SignIn = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
+  const navigation = useNavigation();
 
   return (
-    <ScrollView style={styles.appContainer}>
-      <Wellcome />
-      <InicieSesion />
-      <TextInputDNI
-        onValueChange={(value) => {
-          dispatch({ type: "setDni", payload: value });
-        }}
+    <View style={styles.screen}>
+      <Text>Bienvenido</Text>
+      <TextInput
+        style={styles.input}
+        placeholder="Ingrese su D.N.I."
         defaultValue={state.dni}
+        onChangeText={(value) => dispatch({ type: "setDni", payload: value })}
+        keyboardType="numeric"
+        maxLength={8}
       />
-      <TextInputPass
-        onValueChange={(value) => {
-          dispatch({ type: "setDni", payload: value });
-        }}
-        defaultValue={state.password}
-      />
-    </ScrollView>
-  );
-};
-
-const Wellcome = () => {
-  return (
-    <View style={styles.wellcome}>
-      <Text style={styles.wellcomeText}>Bienvenido</Text>
+      <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
+        <TouchableOpacity style={{ paddingHorizontal: 5 }}>
+          <Button
+            onPress={() => {
+              apiLogin();
+            }}
+            color="red"
+            title="Iniciar Sesión"
+          />
+        </TouchableOpacity>
+        <TouchableOpacity style={{ paddingHorizontal: 5 }}>
+          <Button
+            onPress={() => navigation.navigate('SignUp')}
+            color="blue"
+            title="Registrarse"
+          />
+        </TouchableOpacity>
+      </View>
     </View>
   );
-};
 
-const InicieSesion = () => {
-  return (
-    <View styles={styles.textIniciarSesion}>
-      <Text style={styles.textIS}>Inicie Sesión</Text>
-    </View>
-  );
+  async function apiLogin() {
+    try {
+      const response = await fetch("/algo", {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+      });
+
+      const responseJson = await response.json();
+      console.log(responseJson);
+      if (responseJson.status === "200") {
+        if (responseJson.dni === state.dni) {
+          navigation.navigate("Main");
+        } else {
+          Alert.alert("Cuidado", "Ingrese su D.N.I. correctamente", [
+            {
+              text: "Ok",
+              onPress: () => {},
+              style: "destructive",
+            },
+          ]);
+        }
+      } else {
+        Alert.alert("Error", "Por favor reintente en un momento", [
+          {
+            text: "Ok",
+            onPress: () => {},
+            style: "destructive",
+          },
+        ]);
+      }
+    } catch (err) {
+      Alert.alert("Error", "Intente nuevamente", [
+        {
+          text: "Ok",
+          style: "destructive",
+          onPress: () => {},
+        },
+      ]);
+    }
+  }
 };
 
 const styles = StyleSheet.create({
-  appContainer: {
+  screen: {
     flex: 1,
-    padding: 20,
+    alignItems: "center",
+    justifyContent: "center",
+    paddingHorizontal: 20,
   },
-  signin: {
-    flexDirection: "row",
-    alignItems: "flex-start",
-  },
-  wellcome: {
-    flexDirection: "row",
-    paddingTop: 120,
-    alignItems: "flex-start",
-    color: "red",
-  },
-  wellcomeText: {
-    color: "red",
-    fontSize: 40,
-    fontWeight: "bold",
-  },
-  textIniciarSesion: {
-    flexDirection: "row",
-    alignItems: "flex-start",
-  },
-  textIS: {
-    color: "blue",
-    alignItems: "flex-start",
-    paddingBottom: 20,
+  input: {
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: 20,
+    borderWidth: 1,
+    borderColor: "red",
+    paddingHorizontal: 20,
+    marginVertical: 20,
+    width: "80%",
+    height: "9%",
   },
 });
 

@@ -1,32 +1,37 @@
 import React, { useState } from 'react';
-
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-import AuthStack from './AuthStack';
-import MainTab from './MainTabNavigator';
 import SignIn from '../screens/auth/signin/SignIn';
+import SignUp from '../screens/auth/singup/SignUp';
+import Cursos from '../screens/home/cursos/Cursos';
+import Inicio from '../screens/home/inicio/Inicio';
+import Perfil from '../screens/home/perfil/Perfil';
 
-const AppStack = createStackNavigator();
+const Root = createStackNavigator();
+const TabApp = createBottomTabNavigator();
 
 const Router = () => {
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
-
     return (
         <NavigationContainer>
-            <AppStack.Navigator>
-                {isLoggedIn ? (
-                    <AppStack.Screen name="Home" component={MainTab} />
-                ) : (
-                    <AppStack.Screen name="SignIn" component={SignIn} options={{
-                        headerStyle: {
-                            backgroundColor: '#fff'
-                        }
-                    }} />
-                )}
-            </AppStack.Navigator>
+            <Root.Navigator initialRouteName="Login">
+                <Root.Screen name="Login" component={SignIn} />
+                <Root.Screen name="SignUp" component={SignUp} />
+                <Root.Screen name="Main" component={Main}  />
+            </Root.Navigator>
         </NavigationContainer>
     );
-}
+};
+
+const Main = () => {
+    return (
+        <TabApp.Navigator initialRouteName="Inicio">
+            <TabApp.Screen name="Inicio" component={Inicio} />
+            <TabApp.Screen name="Cursos" component={Cursos} />
+            <TabApp.Screen name="Perfil" component={Perfil} />
+        </TabApp.Navigator>
+    );
+};
 
 export default Router;
