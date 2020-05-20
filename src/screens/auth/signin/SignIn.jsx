@@ -6,6 +6,7 @@ import {
   StyleSheet,
   TouchableOpacity,
   Alert,
+  ActivityIndicator,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { TextInput } from "react-native-gesture-handler";
@@ -64,7 +65,7 @@ const SignIn = () => {
 
   async function apiLogin() {
     try {
-      const response = await fetch("/algo", {
+      const response = await fetch(`${mobileTT}/algo`, {
         method: "POST",
         headers: {
           Accept: "application/json",
