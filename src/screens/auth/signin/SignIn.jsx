@@ -7,9 +7,9 @@ import {
   TouchableOpacity,
   Alert,
   ActivityIndicator,
+  TextInput
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import { TextInput } from "react-native-gesture-handler";
 
 const initialState = {
   dni: "",
@@ -21,6 +21,12 @@ function reducer(state, action) {
     case "setDni": {
       return { ...state, dni: action.payload };
     }
+    case "startLoading": {
+      return { ...state, loading: true };
+    }
+    case "endLoading": {
+      return { ...state, loading: false };
+    }
     default: {
       throw new Error();
     }
@@ -31,40 +37,53 @@ const SignIn = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
   const navigation = useNavigation();
 
-  return (
-    <View style={styles.screen}>
-      <Text>Bienvenido</Text>
-      <TextInput
-        style={styles.input}
-        placeholder="Ingrese su D.N.I."
-        defaultValue={state.dni}
-        onChangeText={(value) => dispatch({ type: "setDni", payload: value })}
-        keyboardType="numeric"
-        maxLength={8}
-      />
-      <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
-        <TouchableOpacity style={{ paddingHorizontal: 5 }}>
-          <Button
-            onPress={() => {
-              apiLogin();
-            }}
-            color="red"
-            title="Iniciar Sesión"
+  switch (state.loading) {
+    case true: {
+      return <ActivityIndicator size="large" style={{ flex: 1 }} color="red" />;
+    }
+    default: {
+      return (
+        <View style={styles.screen}>
+          <Text>Bienvenido</Text>
+          <TextInput
+            style={styles.input}
+            placeholder="Ingrese su D.N.I."
+            defaultValue={state.dni}
+            onChangeText={(value) =>
+              dispatch({ type: "setDni", payload: value })
+            }
+            keyboardType="numeric"
+            maxLength={8}
           />
-        </TouchableOpacity>
-        <TouchableOpacity style={{ paddingHorizontal: 5 }}>
-          <Button
-            onPress={() => navigation.navigate('SignUp')}
-            color="blue"
-            title="Registrarse"
-          />
-        </TouchableOpacity>
-      </View>
-    </View>
-  );
+          <View
+            style={{ flexDirection: "row", justifyContent: "space-between" }}
+          >
+            <TouchableOpacity style={{ paddingHorizontal: 5 }}>
+              <Button
+                onPress={() => {
+                  apiLogin();
+                }}
+                color="red"
+                title="Iniciar Sesión"
+              />
+            </TouchableOpacity>
+            <TouchableOpacity style={{ paddingHorizontal: 5 }}>
+              <Button
+                onPress={() => navigation.navigate("SignUp")}
+                color="blue"
+                title="Registrarse"
+              />
+            </TouchableOpacity>
+          </View>
+        </View>
+      );
+    }
+  }
 
   async function apiLogin() {
     try {
+      dispatch({ type: "startLoading" });
+
       const response = await fetch(`${mobileTT}/algo`, {
         method: "POST",
         headers: {
@@ -74,7 +93,7 @@ const SignIn = () => {
       });
 
       const responseJson = await response.json();
-      console.log(responseJson);
+
       if (responseJson.status === "200") {
         if (responseJson.dni === state.dni) {
           navigation.navigate("Main");
