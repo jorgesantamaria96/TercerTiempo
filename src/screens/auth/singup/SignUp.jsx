@@ -5,12 +5,13 @@ import {
   StyleSheet,
   TextInput,
   Text,
-  KeyboardAvoidingView,
+  BackHandler,
   Alert,
+  SafeAreaView,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import ButtonCustom from "../../../components/common/ButtonCustom";
-import { width, mobileTT } from "../../../constants/constants";
+import { width, mobileTT, colors } from "../../../constants/constants";
 
 const initialState = {
   dni: "",
@@ -55,22 +56,20 @@ const SignUp = () => {
   const navigation = useNavigation();
 
   return (
-    <KeyboardAvoidingView
+    <SafeAreaView
       style={{ flex: 1, flexDirection: "column", justifyContent: "center" }}
-      behavior="padding"
-      enabled
-      keyboardVerticalOffset={10}
     >
       <View
         style={{
           flex: 1,
           alignItems: "center",
           justifyContent: "center",
-          marginBottom: 20,
         }}
       >
         <ScrollView>
-          <Text style={{ textAlign: "center", marginVertical: 20 }}>
+          <Text
+            style={{ textAlign: "center", marginTop: 40, marginBottom: 20 }}
+          >
             Por favor, ingrese los siguientes datos para completar su registro
           </Text>
           <TextInput
@@ -159,7 +158,7 @@ const SignUp = () => {
           />
         </ScrollView>
       </View>
-    </KeyboardAvoidingView>
+    </SafeAreaView>
   );
 
   async function registerTT() {
@@ -214,10 +213,11 @@ const styles = StyleSheet.create({
   input: {
     alignItems: "center",
     justifyContent: "center",
-    borderRadius: 20,
+    borderRadius: 40,
     borderWidth: 1,
-    borderColor: "red",
-    padding: 20,
+    borderColor: colors.ttblue,
+    padding: 6,
+    paddingHorizontal: 20,
     margin: 12,
     width: "90%",
     height: "9%",
@@ -233,8 +233,9 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     width: width - 55,
     borderRadius: 8,
-    marginBottom: 10,
-    backgroundColor: "red",
+    marginTop: 10,
+    marginBottom: 140,
+    backgroundColor: colors.ttred,
     elevation: 2,
     shadowOffset: { width: 0, height: 0 },
     shadowOpacity: 0.2,
