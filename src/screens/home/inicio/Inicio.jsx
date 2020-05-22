@@ -16,7 +16,7 @@ const Inicio = () => {
         {
           text: "SI",
           onPress: () => {
-            navigation.navigate("White");
+            navigation.navigate("Login");
             BackHandler.exitApp();
           },
         },

@@ -12,7 +12,8 @@ import {
   ScrollView,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import { colors } from "../../../constants/constants";
+import { colors, mobileTT } from "../../../constants/constants";
+import { LinearGradient } from "expo-linear-gradient";
 
 const initialState = {
   dni: "",
@@ -56,37 +57,42 @@ const Login = () => {
     }
     default: {
       return (
-        <View style={styles.screen}>
-          <View
-            style={{ flexDirection: "row", marginTop: 50, alignSelf: "center" }}
-          >
-            <Image
-              source={require("../../../../assets/images/icono2.png")}
-              style={{ height: 165, width: 268 }}
-              height={165}
-              width={268}
-            />
-          </View>
-          <Text
-            style={{
-              alignSelf: "flex-start",
-              fontSize: 40,
-              fontWeight: "bold",
-              color: colors.ttred,
-            }}
-          >
-            Bienvenido
-          </Text>
-          <Text
-            style={{
-              alignSelf: "flex-start",
-              fontSize: 19,
-              color: colors.ttblue,
-            }}
-          >
-            Inicie Sesión
-          </Text>
-          <ScrollView>
+        <ScrollView>
+          <View style={styles.screen}>
+            <View
+              style={{
+                flexDirection: "row",
+                marginTop: 50,
+                alignSelf: "center",
+              }}
+            >
+              <Image
+                source={require("../../../../assets/images/icono2.png")}
+                style={{ height: 165, width: 268 }}
+                height={165}
+                width={268}
+              />
+            </View>
+            <Text
+              style={{
+                alignSelf: "flex-start",
+                fontSize: 40,
+                fontWeight: "bold",
+                color: colors.ttred,
+              }}
+            >
+              Bienvenido
+            </Text>
+            <Text
+              style={{
+                alignSelf: "flex-start",
+                fontSize: 19,
+                color: colors.ttblue,
+                marginTop: -5,
+              }}
+            >
+              Inicie Sesión
+            </Text>
             <TextInput
               style={[
                 styles.input,
@@ -103,55 +109,80 @@ const Login = () => {
               onBlur={handleBlur}
             />
             <View style={{ marginVertical: 10 }}>
-              <TouchableOpacity
-                onPress={() => apiLogin()}
-                style={{
-                  paddingHorizontal: 5,
-                  backgroundColor: colors.ttred,
-                  paddingVertical: 10,
-                  borderRadius: 5,
-                  shadowOpacity: 0.2,
-                  shadowRadius: 8,
-                  elevation: 2,
-                }}
-              >
-                <Text style={{ color: "#fff", textAlign: "center" }}>
-                  Iniciar Sesión
-                </Text>
+              <TouchableOpacity onPress={() => apiLogin()}>
+                <LinearGradient
+                  colors={[
+                    colors.buttonLoginColor3,
+                    colors.buttonLoginColor2,
+                    colors.buttonLoginColor1,
+                  ]}
+                  style={{
+                    paddingHorizontal: 5,
+                    paddingVertical: 10,
+                    borderRadius: 5,
+                    shadowOpacity: 0.2,
+                    shadowRadius: 8,
+                    elevation: 2,
+                  }}
+                  start={{ x: 0, y: 0 }}
+                  end={{ x: 1, y: 1 }}
+                >
+                  <Text style={{ color: "#fff", textAlign: "center" }}>
+                    Iniciar Sesión
+                  </Text>
+                </LinearGradient>
               </TouchableOpacity>
             </View>
             <View style={{ marginVertical: 10 }}>
-              <TouchableOpacity
-                onPress={() => navigation.navigate("SignUp")}
-                style={{
-                  paddingHorizontal: 5,
-                  backgroundColor: "blue",
-                  paddingVertical: 10,
-                  borderRadius: 5,
-                  shadowOpacity: 0.2,
-                  shadowRadius: 8,
-                  elevation: 2,
-                }}
-              >
-                <Text style={{ color: "#fff", textAlign: "center" }}>
-                  Registrarme
-                </Text>
+              <TouchableOpacity onPress={() => navigation.navigate("SignUp")}>
+                <LinearGradient
+                  colors={[colors.cornflowerblue, colors.blue, colors.ttblue]}
+                  style={{
+                    paddingHorizontal: 5,
+                    paddingVertical: 10,
+                    borderRadius: 5,
+                    shadowOpacity: 0.2,
+                    shadowRadius: 8,
+                    elevation: 2,
+                  }}
+                  start={{ x: 0, y: 1 }}
+                  end={{ x: 1, y: 0 }}
+                >
+                  <Text style={{ color: "#fff", textAlign: "center" }}>
+                    Registrarme
+                  </Text>
+                </LinearGradient>
               </TouchableOpacity>
               <View
                 style={{
                   alignSelf: "center",
                   alignItems: "center",
-                  paddingVertical: 30,
+                  paddingVertical: 50,
                   paddingHorizontal: 100,
                   marginHorizontal: -120,
                 }}
               >
-                <Text style={{ fontSize: 12 }}>Al crear una cuenta, acepta nuestros</Text>
-                <Text style={{ fontSize: 12 }}>Términos de servicio y Política de privacidad.</Text>
+                <Text style={{ fontSize: 12 }}>
+                  Al crear una cuenta, acepta nuestros
+                </Text>
+                <View style={{ flexDirection: "row" }}>
+                  <Text
+                    style={{ fontSize: 12, color: colors.buttonLoginColor1 }}
+                  >
+                    Términos de servicio
+                  </Text>
+                  <Text style={{ fontSize: 12 }}> y </Text>
+                  <Text
+                    style={{ fontSize: 12, color: colors.buttonLoginColor1 }}
+                  >
+                    Política de privacidad
+                  </Text>
+                  <Text style={{ fontSize: 12 }}>.</Text>
+                </View>
               </View>
             </View>
-          </ScrollView>
-        </View>
+          </View>
+        </ScrollView>
       );
     }
   }
@@ -164,7 +195,7 @@ const Login = () => {
         dni: state.dni,
       };
 
-      const response = await fetch("http://134.122.118.141/api/login", {
+      const response = await fetch(`${mobileTT}/api/login`, {
         method: "POST",
         headers: {
           Accept: "application/json",
@@ -215,14 +246,15 @@ const Login = () => {
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
-    paddingHorizontal: 40,
+    paddingHorizontal: 20,
+    backgroundColor: colors.background,
   },
   input: {
     alignItems: "center",
     justifyContent: "center",
     borderBottomWidth: 1,
     paddingHorizontal: 20,
-    marginVertical: 20,
+    marginVertical: 10,
     width: "100%",
     height: "10%",
   },

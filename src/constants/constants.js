@@ -1,12 +1,14 @@
 import { Dimensions } from 'react-native';
 
 export const version = '1.0.0';
-export const mobileTT = 'http://';
+export const mobileTT = 'http://134.122.118.141';
 
 const { width, height } = Dimensions.get('window');
 
 export const colors = {
     ttblue: '#001667',
+    cornflowerblue: '#6495ED',
+    blue: '#0000FF',
     ttred: '#D70A18',
     phoneBorderColor: '#3F3D56',
     colorPhysicalButton: '#6C63FF',

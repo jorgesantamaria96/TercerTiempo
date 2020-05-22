@@ -5,15 +5,16 @@ import {
   StyleSheet,
   TextInput,
   Text,
-  BackHandler,
   Alert,
-  SafeAreaView,
+  ActivityIndicator,
+  TouchableOpacity,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import ButtonCustom from "../../../components/common/ButtonCustom";
+import { LinearGradient } from "expo-linear-gradient";
 import { width, mobileTT, colors } from "../../../constants/constants";
 
 const initialState = {
+  loading: false,
   dni: "",
   nombre: "",
   apellido: "",
@@ -25,6 +26,12 @@ const initialState = {
 
 function reducer(state, action) {
   switch (action.type) {
+    case "startLoading": {
+      return { ...state, loading: true };
+    }
+    case "endLoading": {
+      return { ...state, loading: false };
+    }
     case "setDni": {
       return { ...state, dni: action.payload };
     }
@@ -55,114 +62,136 @@ const SignUp = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
   const navigation = useNavigation();
 
-  return (
-    <SafeAreaView
-      style={{ flex: 1, flexDirection: "column", justifyContent: "center" }}
-    >
-      <View
-        style={{
-          flex: 1,
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
+  switch (state.loading) {
+    case true: {
+      return (
+        <ActivityIndicator
+          style={{ flex: 1 }}
+          size="large"
+          color={colors.ttred}
+        />
+      );
+    }
+    default: {
+      return (
         <ScrollView>
-          <Text
-            style={{ textAlign: "center", marginTop: 40, marginBottom: 20 }}
-          >
-            Por favor, ingrese los siguientes datos para completar su registro
-          </Text>
-          <TextInput
-            style={styles.input}
-            placeholder="D.N.I."
-            defaultValue={state.dni}
-            onChangeText={(value) =>
-              dispatch({ type: "setDni", payload: value })
-            }
-            keyboardType="numeric"
-            maxLength={8}
-          />
-          <TextInput
-            style={styles.input}
-            placeholder="Nombre"
-            defaultValue={state.nombre}
-            onChangeText={(value) =>
-              dispatch({ type: "setNombre", payload: value })
-            }
-            keyboardType="default"
-          />
-          <TextInput
-            style={styles.input}
-            placeholder="Apellido"
-            defaultValue={state.apellido}
-            onChangeText={(value) =>
-              dispatch({ type: "setApellido", payload: value })
-            }
-            keyboardType="default"
-          />
-          <TextInput
-            style={styles.input}
-            placeholder="Telefono"
-            defaultValue={state.telefono}
-            onChangeText={(value) =>
-              dispatch({ type: "setTelefono", payload: value })
-            }
-            keyboardType="phone-pad"
-            maxLength={10}
-          />
-          <TextInput
-            style={styles.input}
-            placeholder="Dirección"
-            defaultValue={state.direccion}
-            onChangeText={(value) =>
-              dispatch({ type: "setDireccion", payload: value })
-            }
-            keyboardType="default"
-          />
-          <TextInput
-            style={styles.input}
-            placeholder="Mail (opcional)"
-            defaultValue={state.mail}
-            onChangeText={(value) =>
-              dispatch({ type: "setMail", payload: value })
-            }
-            keyboardType="email-address"
-          />
-          <ButtonCustom
-            text="Registrarme"
-            textStyle={styles.signUpButtonText}
-            buttonStyle={styles.signUpButton}
-            onPress={() => {
-              const validate =
-                state.dni &&
-                state.nombre &&
-                state.apellido &&
-                state.telefono &&
-                state.direccion;
-              if (validate) {
-                registerTT();
-              } else {
-                Alert.alert(
-                  "Ups!",
-                  "Todos los campos son requeridos, a excepción del e-mail",
-                  [
-                    {
-                      text: "Ok",
-                      onPress: () => {},
-                      style: "destructive",
-                    },
-                  ]
-                );
-              }
-            }}
-          />
+          <View style={{ flex: 1, paddingHorizontal: 20 }}>
+            <Text
+              style={{ textAlign: "center", marginTop: 50, marginBottom: 10 }}
+            >
+              Por favor, ingrese los siguientes datos para completar su
+              registro. Los campos con (*) son obligatorios.
+            </Text>
+            <View>
+              <TextInput
+                style={styles.input}
+                placeholder=" (*) D.N.I. (sin puntos)"
+                defaultValue={state.dni}
+                onChangeText={(value) =>
+                  dispatch({ type: "setDni", payload: value })
+                }
+                keyboardType="numeric"
+                maxLength={8}
+                placeholderTextColor="grey"
+              />
+              <TextInput
+                style={styles.input}
+                placeholder=" (*) Nombre"
+                defaultValue={state.nombre}
+                onChangeText={(value) =>
+                  dispatch({ type: "setNombre", payload: value })
+                }
+                keyboardType="default"
+                placeholderTextColor="grey"
+              />
+              <TextInput
+                style={styles.input}
+                placeholder=" (*) Apellido"
+                defaultValue={state.apellido}
+                onChangeText={(value) =>
+                  dispatch({ type: "setApellido", payload: value })
+                }
+                keyboardType="default"
+                placeholderTextColor="grey"
+              />
+              <TextInput
+                style={styles.input}
+                placeholder=" (*) Telefono"
+                defaultValue={state.telefono}
+                onChangeText={(value) =>
+                  dispatch({ type: "setTelefono", payload: value })
+                }
+                keyboardType="phone-pad"
+                maxLength={10}
+                placeholderTextColor="grey"
+              />
+              <TextInput
+                style={styles.input}
+                placeholder=" (*) Dirección"
+                defaultValue={state.direccion}
+                onChangeText={(value) =>
+                  dispatch({ type: "setDireccion", payload: value })
+                }
+                keyboardType="default"
+                placeholderTextColor="grey"
+              />
+              <TextInput
+                style={styles.input}
+                placeholder="Mail (opcional)"
+                defaultValue={state.mail}
+                onChangeText={(value) =>
+                  dispatch({ type: "setMail", payload: value })
+                }
+                keyboardType="email-address"
+                placeholderTextColor="grey"
+              />
+            </View>
+            <TouchableOpacity
+              onPress={() => {
+                const validate =
+                  state.dni &&
+                  state.nombre &&
+                  state.apellido &&
+                  state.telefono &&
+                  state.direccion;
+                if (validate) {
+                  registerTT();
+                } else {
+                  Alert.alert(
+                    "Ups!",
+                    "Todos los campos son requeridos, a excepción del e-mail",
+                    [
+                      {
+                        text: "Ok",
+                        onPress: () => {},
+                        style: "destructive",
+                      },
+                    ]
+                  );
+                }
+              }}
+            >
+              <LinearGradient
+                colors={[colors.cornflowerblue, colors.blue, colors.ttblue]}
+                style={styles.signUpButton}
+                start={{ x: 0, y: 1 }}
+                end={{ x: 1, y: 0 }}
+              >
+                <Text style={{ color: "#fff", textAlign: "center" }}>
+                  Registrarme
+                </Text>
+              </LinearGradient>
+            </TouchableOpacity>
+          </View>
         </ScrollView>
-      </View>
-    </SafeAreaView>
-  );
+      );
+    }
+  }
 
   async function registerTT() {
     try {
+      dispatch({ type: "startLoading"});
+
       const body = {
         dni: state.dni,
         nombre: state.nombre,
@@ -183,6 +212,7 @@ const SignUp = () => {
 
       const responseJson = response.json();
       if ((responseJson.status = "200")) {
+        dispatch({ type: "endLoading"});
         navigation.navigate("Main");
       } else {
         Alert.alert("Error", "Por favor reintente en un instante", [
@@ -192,6 +222,7 @@ const SignUp = () => {
             style: "destructive",
           },
         ]);
+        dispatch({ type: "endLoading"});
       }
     } catch (err) {
       Alert.alert(
@@ -205,41 +236,34 @@ const SignUp = () => {
           },
         ]
       );
+      dispatch({ type: "endLoading"});
     }
   }
 };
 
 const styles = StyleSheet.create({
   input: {
-    alignItems: "center",
-    justifyContent: "center",
-    borderRadius: 40,
-    borderWidth: 1,
+    alignSelf: "center",
+    borderBottomWidth: 1,
+    paddingLeft: 10,
     borderColor: colors.ttblue,
-    padding: 6,
-    paddingHorizontal: 20,
-    margin: 12,
-    width: "90%",
-    height: "9%",
+    width: width - 55,
+    marginVertical: 20,
   },
   signUpButtonText: {
     fontSize: 20,
     fontWeight: "bold",
-    padding: 10,
   },
   signUpButton: {
     alignSelf: "center",
-    alignItems: "center",
-    justifyContent: "center",
-    width: width - 55,
-    borderRadius: 8,
-    marginTop: 10,
-    marginBottom: 140,
-    backgroundColor: colors.ttred,
+    borderRadius: 6,
     elevation: 2,
     shadowOffset: { width: 0, height: 0 },
     shadowOpacity: 0.2,
     shadowRadius: 8,
+    marginVertical: 20,
+    paddingVertical: 10,
+    width: width - 55,
   },
 });
 
