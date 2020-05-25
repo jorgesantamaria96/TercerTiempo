@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, Button, StyleSheet, TouchableOpacity } from "react-native";
 
-const Perfil = (props) => {
+const Perfil = ({ route, navigation }) => {
   return (
     <View style={styles.screen}>
       <Text>Perfil</Text>
@@ -9,7 +9,7 @@ const Perfil = (props) => {
         <Button
           title="Logout"
           onPress={() => {
-            props.navigation.navigate("Login", { screen: "Login" });
+            navigation.navigate("Login", { screen: "Login" });
           }}
           color="blue"
         />

@@ -52,7 +52,16 @@ const Router = () => {
   );
 };
 
-const Main = () => {
+const Main = ({ route, navigation }) => {
+  const { dni, nombre, apellido, telefono } = route.params;
+
+  const userParams = {
+    dni: dni,
+    nombre: nombre,
+    apellido: apellido,
+    telefono: telefono,
+  }
+
   return (
     <TabApp.Navigator
       initialRouteName="Inicio"
@@ -76,9 +85,9 @@ const Main = () => {
         inactiveTintColor: "grey",
       }}
     >
-      <TabApp.Screen name="Inicio" component={Inicio} />
-      <TabApp.Screen name="Cursos" component={Cursos} />
-      <TabApp.Screen name="Perfil" component={Perfil} />
+      <TabApp.Screen name="Inicio" component={Inicio} initialParams={userParams} />
+      <TabApp.Screen name="Cursos" component={Cursos} initialParams={userParams} />
+      <TabApp.Screen name="Perfil" component={Perfil} initialParams={userParams} />
     </TabApp.Navigator>
   );
 };

@@ -37,9 +37,8 @@ function reducer(state, action) {
   }
 }
 
-const Login = () => {
+const Login = ({ navigation }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
-  const navigation = useNavigation();
   const [isFocused, setIsFocused] = useState(true);
 
   const handleFocus = () => setIsFocused(true);
@@ -205,9 +204,15 @@ const Login = () => {
       });
 
       const responseJson = await response.json();
+
       if (responseJson.status === "200") {
         if (responseJson.session.user.dni === parseInt(state.dni)) {
-          navigation.navigate("Main");
+          navigation.navigate("Main", {
+            dni: `${responseJson.session.user.dni}`,
+            nombre: `${responseJson.session.user.nombre}`,
+            apellido: `${responseJson.session.user.apellido}`,
+            telefono: `${responseJson.session.user.telefono}`,
+          });
           dispatch({ type: "endLoading" });
         } else {
           Alert.alert("Cuidado", `${responseJson.message}`, [

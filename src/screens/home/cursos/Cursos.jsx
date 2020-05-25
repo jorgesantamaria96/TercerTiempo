@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 
-const Cursos = () => {
+const Cursos = ({ route, navigation }) => {
   return (
     <View style={styles.screen}>
       <Text>Cursos</Text>
