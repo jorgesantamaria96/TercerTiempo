@@ -8,7 +8,9 @@ import {
   ScrollView,
   Image,
   TextInput,
+  FlatList,
 } from "react-native";
+import CardItem from "../../../components/home/CardItem";
 import { colors } from "../../../constants/constants";
 import Icon from "react-native-vector-icons/FontAwesome";
 
@@ -16,6 +18,7 @@ const initialState = {
   loading: false,
   search: "",
   searchs: [],
+  cursos: [],
 };
 
 function reducer(state, action) {
@@ -73,13 +76,16 @@ const Inicio = ({ route, navigation }) => {
     return () => backHandler.remove();
   }, []);
 
-  const { dni, nombre, apellido, telefono } = route.params;
+  const { dni, nombre, apellido, telefono, cursosData } = route.params;
   const params = {
     dni: dni,
     nombre: nombre,
     apellido: apellido,
     telefono: telefono,
+    data: cursosData,
   };
+
+  console.log(params.data[0]);
 
   return (
     <ScrollView>
@@ -126,13 +132,39 @@ const Inicio = ({ route, navigation }) => {
             style={{
               color: colors.inicioText,
               padding: 10,
-              marginLeft: -37
+              marginLeft: -37,
             }}
           />
         </View>
         <View style={{ alignSelf: "flex-start", marginVertical: 20 }}>
-          <Text style={{ fontSize: 15 }}>Los más vistos</Text>
+          <Text
+            style={{
+              fontSize: 15,
+              fontWeight: "bold",
+              color: colors.inicioText,
+            }}
+          >
+            Los más vistos
+          </Text>
         </View>
+        <FlatList
+          style={{ marginBottom: 20 }}
+          data={params.data}
+          onRefresh={() => {} /* fetchData */}
+          refreshing={state.loading}
+          renderItem={({ item }) => {
+            return (
+              <CardItem
+                title={item.title}
+                image={item.image}
+                detail={item.detail}
+                ranking={item.ranking}
+                onPress={() => navigation.navigate("Details", { item })}
+              />
+            );
+          }}
+          keyExtractor={(item, index) => `${index}_${item.id}`}
+        />
       </View>
     </ScrollView>
   );
@@ -144,6 +176,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     paddingHorizontal: 20,
+    backgroundColor: colors.background,
   },
   input: {
     alignItems: "center",

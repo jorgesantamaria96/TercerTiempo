@@ -11,6 +11,7 @@ import Cursos from "../screens/home/cursos/Cursos";
 import Inicio from "../screens/home/inicio/Inicio";
 import Perfil from "../screens/home/perfil/Perfil";
 import { colors } from "../constants/constants";
+import { DATA } from '../data/data';
 
 const Root = createStackNavigator();
 const TabApp = createBottomTabNavigator();
@@ -60,7 +61,9 @@ const Main = ({ route, navigation }) => {
     nombre: nombre,
     apellido: apellido,
     telefono: telefono,
+    cursosData: DATA,
   }
+
 
   return (
     <TabApp.Navigator
