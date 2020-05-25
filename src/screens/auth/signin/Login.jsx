@@ -49,7 +49,7 @@ const Login = () => {
     case true: {
       return (
         <ActivityIndicator
-          style={{ flex: 1 }}
+          style={{ flex: 1, backgroundColor: colors.background }}
           size="large"
           color={colors.ttred}
         />
@@ -205,7 +205,6 @@ const Login = () => {
       });
 
       const responseJson = await response.json();
-      console.log(responseJson);
       if (responseJson.status === "200") {
         if (responseJson.session.user.dni === parseInt(state.dni)) {
           navigation.navigate("Main");
