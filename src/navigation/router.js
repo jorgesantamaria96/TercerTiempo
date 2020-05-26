@@ -9,12 +9,14 @@ import SignUp from "../screens/auth/singup/SignUp";
 import Wellcome from "../screens/auth/singup/Wellcome";
 import Cursos from "../screens/home/cursos/Cursos";
 import Inicio from "../screens/home/inicio/Inicio";
+import Details from "../screens/home/inicio/Details";
 import Perfil from "../screens/home/perfil/Perfil";
 import { colors } from "../constants/constants";
-import { DATA } from '../data/data';
+import { DATA } from "../data/data";
 
 const Root = createStackNavigator();
 const TabApp = createBottomTabNavigator();
+const RouteCursos = createStackNavigator();
 
 const Router = () => {
   return (
@@ -62,8 +64,7 @@ const Main = ({ route, navigation }) => {
     apellido: apellido,
     telefono: telefono,
     cursosData: DATA,
-  }
-
+  };
 
   return (
     <TabApp.Navigator
@@ -80,7 +81,7 @@ const Main = ({ route, navigation }) => {
             iconName = focused ? "user" : "user";
           }
 
-          return <FontAwesomeIcon name={iconName} size={size} color={color} />
+          return <FontAwesomeIcon name={iconName} size={size} color={color} />;
         },
       })}
       tabBarOptions={{
@@ -88,10 +89,55 @@ const Main = ({ route, navigation }) => {
         inactiveTintColor: "grey",
       }}
     >
-      <TabApp.Screen name="Inicio" component={Inicio} initialParams={userParams} />
-      <TabApp.Screen name="Cursos" component={Cursos} initialParams={userParams} />
-      <TabApp.Screen name="Perfil" component={Perfil} initialParams={userParams} />
+      <TabApp.Screen
+        name="Inicio"
+        component={RouteInicioCursos}
+        initialParams={userParams}
+      />
+      <TabApp.Screen
+        name="Cursos"
+        component={Cursos}
+        initialParams={userParams}
+      />
+      <TabApp.Screen
+        name="Perfil"
+        component={Perfil}
+        initialParams={userParams}
+      />
     </TabApp.Navigator>
+  );
+};
+
+const RouteInicioCursos = ({ route, navigation }) => {
+  const { dni, nombre, apellido, telefono } = route.params;
+
+  const userParams = {
+    dni: dni,
+    nombre: nombre,
+    apellido: apellido,
+    telefono: telefono,
+    cursosData: DATA,
+  };
+
+  return (
+    <RouteCursos.Navigator initialRouteName="Inicio">
+      <RouteCursos.Screen
+        name="Inicio"
+        component={Inicio}
+        initialParams={userParams}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <RouteCursos.Screen
+        name="Details"
+        component={Details}
+        initialParams={userParams}
+        options={{
+          headerShown: false,
+        }}
+      />
+    </RouteCursos.Navigator>
   );
 };
 

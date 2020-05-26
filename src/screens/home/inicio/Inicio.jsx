@@ -76,6 +76,7 @@ const Inicio = ({ route, navigation }) => {
     return () => backHandler.remove();
   }, []);
 
+  // Datos traídos de las rutas
   const { dni, nombre, apellido, telefono, cursosData } = route.params;
   const params = {
     dni: dni,
@@ -84,8 +85,6 @@ const Inicio = ({ route, navigation }) => {
     telefono: telefono,
     data: cursosData,
   };
-
-  console.log(params.data[0]);
 
   return (
     <ScrollView>
@@ -97,60 +96,26 @@ const Inicio = ({ route, navigation }) => {
           />
         </View>
         <View>
-          <Text
-            style={{
-              fontSize: 30,
-              fontWeight: "bold",
-              color: colors.inicioText,
-            }}
-          >
-            Hola {params.nombre}!
-          </Text>
+          <Text style={styles.hi}>Hola {params.nombre}!</Text>
         </View>
         <View>
-          <Text style={{ fontSize: 12, color: colors.inicioText }}>
-            Qué deseas aprender hoy?
-          </Text>
+          <Text style={styles.whatsLearnToday}>Qué deseas aprender hoy?</Text>
         </View>
-        <View
-          style={{
-            flex: 1,
-            flexDirection: "row",
-            marginTop: 10,
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
+        <View style={styles.search}>
           <TextInput
             placeholder="Buscar"
             placeholderTextColor={colors.inicioText}
             style={styles.input}
           />
-          <Icon
-            name="search"
-            size={15}
-            style={{
-              color: colors.inicioText,
-              padding: 10,
-              marginLeft: -37,
-            }}
-          />
+          <Icon name="search" size={15} style={styles.searchIcon} />
         </View>
-        <View style={{ alignSelf: "flex-start", marginVertical: 20 }}>
-          <Text
-            style={{
-              fontSize: 15,
-              fontWeight: "bold",
-              color: colors.inicioText,
-            }}
-          >
-            Los más vistos
-          </Text>
+        <View style={styles.mostView}>
+          <Text style={styles.mostViewText}>Los más vistos</Text>
         </View>
         <FlatList
-          style={{ marginBottom: 20 }}
+          style={{ marginBottom: 20, width: "100%" }}
           data={params.data}
-          onRefresh={() => {} /* fetchData */}
+          onRefresh={() => {} /* fetchData() */}
           refreshing={state.loading}
           renderItem={({ item }) => {
             return (
@@ -178,16 +143,46 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     backgroundColor: colors.background,
   },
+  hi: {
+    fontSize: 30,
+    fontWeight: "bold",
+    color: colors.inicioText,
+  },
+  whatsLearnToday: {
+    fontSize: 12,
+    color: colors.inicioText,
+  },
   input: {
     alignItems: "center",
     justifyContent: "center",
     borderWidth: 1,
     borderColor: "#fff",
-    paddingHorizontal: 10,
+    paddingHorizontal: 12,
     borderRadius: 40,
     elevation: 3,
     width: "70%",
     height: "100%",
+  },
+  mostView: {
+    alignSelf: "flex-start",
+    marginVertical: 20,
+  },
+  mostViewText: {
+    fontSize: 15,
+    fontWeight: "bold",
+    color: colors.inicioText,
+  },
+  search: {
+    flex: 1,
+    flexDirection: "row",
+    marginTop: 10,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  searchIcon: {
+    color: colors.inicioText,
+    padding: 10,
+    marginLeft: -37,
   },
 });
 
