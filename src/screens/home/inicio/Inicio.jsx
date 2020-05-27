@@ -89,16 +89,16 @@ const Inicio = ({ route, navigation }) => {
   return (
     <ScrollView>
       <View style={styles.screen}>
-        <View style={{ marginTop: 40 }}>
+        <View style={{ marginTop: 40, paddingHorizontal: 20 }}>
           <Image
             source={require("../../../../assets/images/icono2.png")}
             style={{ width: 83, height: 50 }}
           />
         </View>
-        <View>
+        <View style={{ paddingHorizontal: 20}}>
           <Text style={styles.hi}>Hola {params.nombre}!</Text>
         </View>
-        <View>
+        <View style={{ paddingHorizontal: 20 }}>
           <Text style={styles.whatsLearnToday}>Qué deseas aprender hoy?</Text>
         </View>
         <View style={styles.search}>
@@ -123,7 +123,7 @@ const Inicio = ({ route, navigation }) => {
                 title={item.title}
                 image={item.image}
                 detail={item.detail}
-                ranking={item.ranking}
+                rating={item.ranking}
                 onPress={() => navigation.navigate("Details", { item })}
               />
             );
@@ -140,8 +140,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    paddingHorizontal: 20,
-    backgroundColor: colors.background,
+    backgroundColor: '#ffffff',
   },
   hi: {
     fontSize: 30,
@@ -166,6 +165,7 @@ const styles = StyleSheet.create({
   mostView: {
     alignSelf: "flex-start",
     marginVertical: 20,
+    paddingHorizontal: 20,
   },
   mostViewText: {
     fontSize: 15,
@@ -178,6 +178,7 @@ const styles = StyleSheet.create({
     marginTop: 10,
     justifyContent: "center",
     alignItems: "center",
+    paddingHorizontal: 20,
   },
   searchIcon: {
     color: colors.inicioText,
