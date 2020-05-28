@@ -2,7 +2,6 @@ import React, { useReducer, useState } from "react";
 import {
   View,
   Text,
-  Button,
   StyleSheet,
   TouchableOpacity,
   Alert,
@@ -11,7 +10,6 @@ import {
   Image,
   ScrollView,
 } from "react-native";
-import { useNavigation } from "@react-navigation/native";
 import { colors, mobileTT } from "../../../constants/constants";
 import { LinearGradient } from "expo-linear-gradient";
 

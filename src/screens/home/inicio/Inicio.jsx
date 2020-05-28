@@ -9,6 +9,7 @@ import {
   Image,
   TextInput,
   FlatList,
+  TouchableOpacity,
 } from "react-native";
 import CardItem from "../../../components/home/CardItem";
 import { colors } from "../../../constants/constants";
@@ -44,38 +45,6 @@ function reducer(state, action) {
 const Inicio = ({ route, navigation }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  // Manejador del botón de Android
-  useEffect(() => {
-    const backAction = () => {
-      Alert.alert(
-        "Atención!",
-        "Desea cerrar sesión y salir de Tercer Tiempo?",
-        [
-          {
-            text: "NO",
-            onPress: () => null,
-            style: "cancel",
-          },
-          {
-            text: "SI",
-            onPress: () => {
-              navigation.navigate("Login");
-              BackHandler.exitApp();
-            },
-          },
-        ]
-      );
-      return true;
-    };
-
-    const backHandler = BackHandler.addEventListener(
-      "hardwareBackPress",
-      backAction
-    );
-
-    return () => backHandler.remove();
-  }, []);
-
   // Datos traídos de las rutas
   const { dni, nombre, apellido, telefono, cursosData } = route.params;
   const params = {
@@ -83,8 +52,9 @@ const Inicio = ({ route, navigation }) => {
     nombre: nombre,
     apellido: apellido,
     telefono: telefono,
-    data: cursosData,
   };
+
+  const data = cursosData;
 
   return (
     <ScrollView>
@@ -95,28 +65,31 @@ const Inicio = ({ route, navigation }) => {
             style={{ width: 83, height: 50 }}
           />
         </View>
-        <View style={{ paddingHorizontal: 20}}>
+        <View style={{ paddingHorizontal: 20 }}>
           <Text style={styles.hi}>Hola {params.nombre}!</Text>
         </View>
         <View style={{ paddingHorizontal: 20 }}>
           <Text style={styles.whatsLearnToday}>Qué deseas aprender hoy?</Text>
         </View>
-        <View style={styles.search}>
-          <TextInput
-            placeholder="Buscar"
-            placeholderTextColor={colors.inicioText}
-            style={styles.input}
-          />
-          <Icon name="search" size={15} style={styles.searchIcon} />
+        <View style={{ flexDirection: "row" }}>
+          <View style={styles.containerInput}>
+            <TextInput
+              placeholder="Buscar"
+              placeholderTextColor={colors.inicioText}
+              onChangeText={() => {}}
+              style={styles.input}
+            />
+          </View>
+          <TouchableOpacity style={styles.icon}>
+            <Icon name="search" size={15} style={styles.searchIcon} />
+          </TouchableOpacity>
         </View>
         <View style={styles.mostView}>
           <Text style={styles.mostViewText}>Los más vistos</Text>
         </View>
         <FlatList
-          style={{ marginBottom: 20, width: "100%" }}
-          data={params.data}
-          onRefresh={() => {} /* fetchData() */}
-          refreshing={state.loading}
+          style={{ width: "100%" }}
+          data={data}
           renderItem={({ item }) => {
             return (
               <CardItem
@@ -124,7 +97,11 @@ const Inicio = ({ route, navigation }) => {
                 image={item.image}
                 detail={item.detail}
                 rating={item.ranking}
-                onPress={() => navigation.navigate("Details", { item })}
+                onPress={() =>
+                  navigation.navigate("Details", {
+                    item,
+                  })
+                }
               />
             );
           }}
@@ -140,7 +117,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: '#ffffff',
+    backgroundColor: "#ffffff",
   },
   hi: {
     fontSize: 30,
@@ -151,20 +128,24 @@ const styles = StyleSheet.create({
     fontSize: 12,
     color: colors.inicioText,
   },
+  containerInput: {
+    width: 200,
+    margin: 10,
+  },
   input: {
-    alignItems: "center",
-    justifyContent: "center",
     borderWidth: 1,
     borderColor: "#fff",
-    paddingHorizontal: 12,
+    paddingHorizontal: 20,
+    paddingTop: 5,
     borderRadius: 40,
     elevation: 3,
-    width: "70%",
-    height: "100%",
+    width: "100%",
+    paddingBottom: 5,
   },
   mostView: {
     alignSelf: "flex-start",
-    marginVertical: 20,
+    marginTop: 20,
+    marginBottom: 5,
     paddingHorizontal: 20,
   },
   mostViewText: {
@@ -172,18 +153,17 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     color: colors.inicioText,
   },
-  search: {
-    flex: 1,
-    flexDirection: "row",
-    marginTop: 10,
-    justifyContent: "center",
-    alignItems: "center",
-    paddingHorizontal: 20,
+  icon: {
+    borderWidth: 0.1,
+    elevation: 1,
+    margin: 10,
+    alignSelf: "center",
+    padding: 10,
+    borderRadius: 100,
+    borderColor: "#fff",
   },
   searchIcon: {
     color: colors.inicioText,
-    padding: 10,
-    marginLeft: -37,
   },
 });
 

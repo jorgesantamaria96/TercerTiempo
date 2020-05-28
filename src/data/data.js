@@ -5,7 +5,7 @@ export const DATA = [
     detail:
       "Aprende conceptos, técnicas y herramientas para trabajar la madera como un experto",
     ranking: 5,
-    image: "carpinteria.png",
+    image: "carpinteria",
   },
   {
     id: 1,
@@ -13,7 +13,7 @@ export const DATA = [
     detail:
       "Brindaremos conocimientos en construccion en seco para interiores incluyendo técnicas",
     ranking: 5,
-    image: "construccion.png",
+    image: "construccion",
   },
   {
     id: 2,
@@ -21,7 +21,7 @@ export const DATA = [
     detail:
       "Una gran oportunidad para todas aquellas personas que quieran usar el",
     ranking: 3,
-    image: "torneria.png",
+    image: "torneria",
   },
   {
     id: 3,
@@ -29,7 +29,7 @@ export const DATA = [
     detail:
       "En éste curso aprenderás el arte cortar el cabello y la barba con técnicas actualizadas",
     ranking: 4,
-    image: "barberia.png",
+    image: "barberia",
   },
   {
     id: 5,
@@ -37,6 +37,6 @@ export const DATA = [
     detail:
       "Aprenderás de una forma totalmente práctica los secretos de las soldaduras eléctricas",
     ranking: 4,
-    image: "soldadura.png",
+    image: "soldadura",
   },
 ];

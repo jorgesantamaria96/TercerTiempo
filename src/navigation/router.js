@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
+import { BackHandler, Alert } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
@@ -16,6 +17,7 @@ import { DATA } from "../data/data";
 
 const Root = createStackNavigator();
 const TabApp = createBottomTabNavigator();
+const RouteInicio = createStackNavigator();
 const RouteCursos = createStackNavigator();
 
 const Router = () => {
@@ -56,6 +58,33 @@ const Router = () => {
 };
 
 const Main = ({ route, navigation }) => {
+  // Manejador del botón de Android
+  useEffect(() => {
+    const backAction = () => {
+      Alert.alert("Atención!", "Desea cerrar sesión?", [
+        {
+          text: "NO",
+          onPress: () => null,
+          style: "cancel",
+        },
+        {
+          text: "SI",
+          onPress: () => {
+            navigation.popToTop();
+          },
+        },
+      ]);
+      return true;
+    };
+
+    const backHandler = BackHandler.addEventListener(
+      "hardwareBackPress",
+      backAction
+    );
+
+    return () => backHandler.remove();
+  }, []);
+
   const { dni, nombre, apellido, telefono } = route.params;
 
   const userParams = {
@@ -91,12 +120,12 @@ const Main = ({ route, navigation }) => {
     >
       <TabApp.Screen
         name="Inicio"
-        component={RouteInicioCursos}
+        component={RouteInicioComponent}
         initialParams={userParams}
       />
       <TabApp.Screen
         name="Cursos"
-        component={Cursos}
+        component={RouteCursosComponent}
         initialParams={userParams}
       />
       <TabApp.Screen
@@ -108,7 +137,7 @@ const Main = ({ route, navigation }) => {
   );
 };
 
-const RouteInicioCursos = ({ route, navigation }) => {
+const RouteInicioComponent = ({ route, navigation }) => {
   const { dni, nombre, apellido, telefono } = route.params;
 
   const userParams = {
@@ -120,10 +149,44 @@ const RouteInicioCursos = ({ route, navigation }) => {
   };
 
   return (
-    <RouteCursos.Navigator initialRouteName="Inicio">
-      <RouteCursos.Screen
+    <RouteInicio.Navigator initialRouteName="Inicio">
+      <RouteInicio.Screen
         name="Inicio"
         component={Inicio}
+        initialParams={userParams}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <RouteInicio.Screen
+        name="Details"
+        component={Details}
+        initialParams={userParams}
+        options={{
+          headerTitle: null,
+          headerTintColor: colors.textColor,
+        }}
+      />
+    </RouteInicio.Navigator>
+  );
+};
+
+const RouteCursosComponent = ({ route, navigation }) => {
+  const { dni, nombre, apellido, telefono } = route.params;
+
+  const userParams = {
+    dni: dni,
+    nombre: nombre,
+    apellido: apellido,
+    telefono: telefono,
+    cursosData: DATA,
+  };
+
+  return (
+    <RouteCursos.Navigator initialRouteName="Cursos">
+      <RouteCursos.Screen
+        name="Cursos"
+        component={Cursos}
         initialParams={userParams}
         options={{
           headerShown: false,
@@ -134,7 +197,8 @@ const RouteInicioCursos = ({ route, navigation }) => {
         component={Details}
         initialParams={userParams}
         options={{
-          headerShown: false,
+          headerTitle: null,
+          headerTintColor: colors.textColor,
         }}
       />
     </RouteCursos.Navigator>

@@ -9,7 +9,6 @@ import {
   ActivityIndicator,
   TouchableOpacity,
 } from "react-native";
-import { useNavigation } from "@react-navigation/native";
 import { LinearGradient } from "expo-linear-gradient";
 import { width, mobileTT, colors } from "../../../constants/constants";
 
@@ -58,9 +57,8 @@ function reducer(state, action) {
   }
 }
 
-const SignUp = () => {
+const SignUp = ({ route, navigation }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
-  const navigation = useNavigation();
 
   switch (state.loading) {
     case true: {
@@ -148,7 +146,8 @@ const SignUp = () => {
             </View>
             <TouchableOpacity
               onPress={() => {
-                const validate =
+                navigation.navigate("Wellcome", { nombre: state.nombre });
+                /* const validate =
                   state.dni &&
                   state.nombre &&
                   state.apellido &&
@@ -168,7 +167,7 @@ const SignUp = () => {
                       },
                     ]
                   );
-                }
+                } */
               }}
             >
               <LinearGradient
@@ -190,7 +189,7 @@ const SignUp = () => {
 
   async function registerTT() {
     try {
-      dispatch({ type: "startLoading"});
+      dispatch({ type: "startLoading" });
 
       const body = {
         dni: state.dni,
@@ -212,8 +211,8 @@ const SignUp = () => {
 
       const responseJson = response.json();
       if ((responseJson.status = "200")) {
-        dispatch({ type: "endLoading"});
-        navigation.navigate("Main");
+        dispatch({ type: "endLoading" });
+        navigation.navigate("Wellcome", { nombre: state.nombre });
       } else {
         Alert.alert("Error", "Por favor reintente en un instante", [
           {
@@ -222,7 +221,7 @@ const SignUp = () => {
             style: "destructive",
           },
         ]);
-        dispatch({ type: "endLoading"});
+        dispatch({ type: "endLoading" });
       }
     } catch (err) {
       Alert.alert(
@@ -236,7 +235,7 @@ const SignUp = () => {
           },
         ]
       );
-      dispatch({ type: "endLoading"});
+      dispatch({ type: "endLoading" });
     }
   }
 };
