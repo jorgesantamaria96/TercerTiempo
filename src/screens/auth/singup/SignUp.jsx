@@ -146,8 +146,15 @@ const SignUp = ({ route, navigation }) => {
             </View>
             <TouchableOpacity
               onPress={() => {
-                navigation.navigate("Wellcome", { nombre: state.nombre });
-                /* const validate =
+                /* navigation.navigate("Wellcome", {
+                  dni: state.dni,
+                  nombre: state.nombre,
+                  apellido: state.apellido,
+                  telefono: state.telefono,
+                  direccion: state.direccion,
+                  mail: state.mail,
+                }); */
+                const validate =
                   state.dni &&
                   state.nombre &&
                   state.apellido &&
@@ -167,7 +174,7 @@ const SignUp = ({ route, navigation }) => {
                       },
                     ]
                   );
-                } */
+                }
               }}
             >
               <LinearGradient
@@ -212,7 +219,7 @@ const SignUp = ({ route, navigation }) => {
       const responseJson = response.json();
       if ((responseJson.status = "200")) {
         dispatch({ type: "endLoading" });
-        navigation.navigate("Wellcome", { nombre: state.nombre });
+        navigation.navigate("Wellcome", body );
       } else {
         Alert.alert("Error", "Por favor reintente en un instante", [
           {

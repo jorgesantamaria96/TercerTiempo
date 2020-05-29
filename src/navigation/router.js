@@ -21,6 +21,7 @@ const RouteInicio = createStackNavigator();
 const RouteCursos = createStackNavigator();
 
 const Router = () => {
+  const cursosData = DATA;
   return (
     <NavigationContainer>
       <Root.Navigator initialRouteName="Login">
@@ -44,6 +45,7 @@ const Router = () => {
           options={{
             headerShown: false,
           }}
+          initialParams={cursosData}
         />
         <Root.Screen
           name="Main"
