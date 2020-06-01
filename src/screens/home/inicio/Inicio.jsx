@@ -3,8 +3,6 @@ import {
   View,
   Text,
   StyleSheet,
-  BackHandler,
-  Alert,
   ScrollView,
   Image,
   TextInput,
@@ -46,14 +44,14 @@ const Inicio = ({ route, navigation }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   // Datos traídos de las rutas
-  const { dni, nombre, apellido, telefono, cursosData } = route.params;
+  const { dni, nombre, apellido, telefono, mail, cursosData } = route.params;
   const params = {
     dni: dni,
     nombre: nombre,
     apellido: apellido,
     telefono: telefono,
+    mail: mail,
   };
-
   const data = cursosData;
 
   return (
@@ -110,6 +108,8 @@ const Inicio = ({ route, navigation }) => {
       </View>
     </ScrollView>
   );
+
+
 };
 
 const styles = StyleSheet.create({
@@ -157,6 +157,7 @@ const styles = StyleSheet.create({
     borderWidth: 0.1,
     elevation: 1,
     margin: 10,
+    marginLeft: -5,
     alignSelf: "center",
     padding: 10,
     borderRadius: 100,

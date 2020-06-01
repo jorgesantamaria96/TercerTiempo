@@ -6,13 +6,14 @@ import Icon from "react-native-vector-icons/FontAwesome";
 
 const Wellcome = ({ route, navigation }) => {
   // Datos traídos de las rutas
-  const { dni, nombre, apellido, telefono, cursosData } = route.params;
+  const { dni, nombre, apellido, telefono, cursosData, mail } = route.params;
   const params = {
     dni: dni,
     nombre: nombre,
     apellido: apellido,
     telefono: telefono,
     data: cursosData,
+    mail: mail,
   };
 
   return (

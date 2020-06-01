@@ -206,10 +206,21 @@ const Login = ({ navigation }) => {
       if (responseJson.status === "200") {
         if (responseJson.session.user.dni === parseInt(state.dni)) {
           navigation.navigate("Main", {
-            dni: `${responseJson.session.user.dni}`,
-            nombre: `${responseJson.session.user.nombre}`,
-            apellido: `${responseJson.session.user.apellido}`,
-            telefono: `${responseJson.session.user.telefono}`,
+            dni: responseJson.session.user.dni
+              ? responseJson.session.user.dni
+              : "--",
+            nombre: responseJson.session.user.nombre
+              ? responseJson.session.user.nombre
+              : "--",
+            apellido: responseJson.session.user.apellido
+              ? responseJson.session.user.apellido
+              : "--",
+            telefono: responseJson.session.user.telefono !== null
+              ? responseJson.session.user.telefono
+              : "--",
+            mail: responseJson.session.user.mail
+              ? responseJson.session.user.mail
+              : "--",
           });
           dispatch({ type: "endLoading" });
         } else {

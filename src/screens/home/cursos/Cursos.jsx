@@ -14,26 +14,25 @@ const Cursos = ({ route, navigation }) => {
   const [loading, setLoading] = useState(false);
 
   // Datos traídos de las rutas
-  const { dni, nombre, apellido, telefono, cursosData } = route.params;
+  const { dni, nombre, apellido, telefono, cursosData, mail } = route.params;
   const params = {
     dni: dni,
     nombre: nombre,
     apellido: apellido,
     telefono: telefono,
     data: cursosData,
+    mail: mail,
   };
 
   return (
     <ScrollView>
       <View style={styles.screen}>
         <View style={{ marginTop: 40 }}>
-          <View
-            style={{ flexDirection: "row", alignSelf: "center" }}
-          >
+          <View style={{ flexDirection: "row", alignSelf: "center" }}>
             <View style={styles.image}>
               <Image
                 source={require("../../../../assets/images/sublogo.png")}
-                style={{ width: 140, height: 124 }}
+                style={{ width: 147, height: 130 }}
               />
             </View>
           </View>
@@ -42,7 +41,7 @@ const Cursos = ({ route, navigation }) => {
               flexDirection: "row",
               borderColor: "black",
               justifyContent: "center",
-              marginVertical: 5
+              marginVertical: 5,
             }}
           >
             <View style={styles.titleContainer}>

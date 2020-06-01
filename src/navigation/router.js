@@ -87,13 +87,14 @@ const Main = ({ route, navigation }) => {
     return () => backHandler.remove();
   }, []);
 
-  const { dni, nombre, apellido, telefono } = route.params;
+  const { dni, nombre, apellido, telefono, mail } = route.params;
 
   const userParams = {
     dni: dni,
     nombre: nombre,
     apellido: apellido,
     telefono: telefono,
+    mail: mail,
     cursosData: DATA,
   };
 
@@ -140,13 +141,14 @@ const Main = ({ route, navigation }) => {
 };
 
 const RouteInicioComponent = ({ route, navigation }) => {
-  const { dni, nombre, apellido, telefono } = route.params;
+  const { dni, nombre, apellido, telefono, mail } = route.params;
 
   const userParams = {
     dni: dni,
     nombre: nombre,
     apellido: apellido,
     telefono: telefono,
+    mail: mail,
     cursosData: DATA,
   };
 
@@ -174,13 +176,14 @@ const RouteInicioComponent = ({ route, navigation }) => {
 };
 
 const RouteCursosComponent = ({ route, navigation }) => {
-  const { dni, nombre, apellido, telefono } = route.params;
+  const { dni, nombre, apellido, telefono, mail } = route.params;
 
   const userParams = {
     dni: dni,
     nombre: nombre,
     apellido: apellido,
     telefono: telefono,
+    mail: mail,
     cursosData: DATA,
   };
 
