@@ -21,8 +21,6 @@ const Perfil = ({ route, navigation }) => {
     telefono: telefono,
     mail: mail,
   };
-  console.log(params);
-
   const data = cursosData;
 
   return (
@@ -40,8 +38,8 @@ const Perfil = ({ route, navigation }) => {
             backgroundColor: colors.background,
           }}
         >
-          Muy pronto estaremos realizando cambios, incluyendo la posibilidad de editar tus
-          datos personales y agregar más funcionalidades.
+          Muy pronto estaremos realizando cambios, incluyendo la posibilidad de
+          editar tus datos personales y agregar más funcionalidades.
         </Text>
         <View style={{}}>
           <View style={styles.box}>
@@ -92,7 +90,7 @@ const Perfil = ({ route, navigation }) => {
             </LinearGradient>
           </TouchableOpacity>
         </View>
-        <View style={{ marginTop: 10 }}>
+        <View style={{ marginTop: 10, marginBottom: 5 }}>
           <Text style={{ textAlign: "center" }}>Versión: {version}</Text>
         </View>
       </View>

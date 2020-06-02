@@ -1,4 +1,4 @@
-import React, { useEffect, useReducer } from "react";
+import React, { useReducer } from "react";
 import {
   View,
   Text,
@@ -97,7 +97,10 @@ const Inicio = ({ route, navigation }) => {
                 rating={item.ranking}
                 onPress={() =>
                   navigation.navigate("Details", {
-                    item,
+                    id: item.id,
+                    title: item.title,
+                    detail: item.detail,
+                    ranking: item.ranking,
                   })
                 }
               />
@@ -108,8 +111,6 @@ const Inicio = ({ route, navigation }) => {
       </View>
     </ScrollView>
   );
-
-
 };
 
 const styles = StyleSheet.create({
