@@ -63,7 +63,10 @@ const Cursos = ({ route, navigation }) => {
                 rating={item.ranking}
                 onPress={() =>
                   navigation.navigate("Details", {
-                    item,
+                    id: item.id,
+                    title: item.title,
+                    detail: item.detail,
+                    ranking: item.ranking,
                   })
                 }
               />
