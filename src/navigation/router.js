@@ -10,10 +10,11 @@ import SignUp from "../screens/auth/singup/SignUp";
 import Wellcome from "../screens/auth/singup/Wellcome";
 import Cursos from "../screens/home/cursos/Cursos";
 import Inicio from "../screens/home/inicio/Inicio";
+import Presentation from "../screens/home/inicio/Presentation";
 import Details from "../screens/home/inicio/Details";
 import Perfil from "../screens/home/perfil/Perfil";
 import { colors } from "../constants/constants";
-import { DATA } from "../data/data";
+import { CURSOS } from "../data/data";
 
 const Root = createStackNavigator();
 const TabApp = createBottomTabNavigator();
@@ -21,7 +22,7 @@ const RouteInicio = createStackNavigator();
 const RouteCursos = createStackNavigator();
 
 const Router = () => {
-  const cursosData = DATA;
+  const cursosData = CURSOS;
   return (
     <NavigationContainer>
       <Root.Navigator initialRouteName="Login">
@@ -95,7 +96,7 @@ const Main = ({ route, navigation }) => {
     apellido: apellido,
     telefono: telefono,
     mail: mail,
-    cursosData: DATA,
+    cursosData: CURSOS,
   };
 
   return (
@@ -149,7 +150,7 @@ const RouteInicioComponent = ({ route, navigation }) => {
     apellido: apellido,
     telefono: telefono,
     mail: mail,
-    cursosData: DATA,
+    cursosData: CURSOS,
   };
 
   return (
@@ -160,6 +161,15 @@ const RouteInicioComponent = ({ route, navigation }) => {
         initialParams={userParams}
         options={{
           headerShown: false,
+        }}
+      />
+      <RouteInicio.Screen
+        name="Presentacion"
+        component={Presentation}
+        initialParams={userParams}
+        options={{
+          headerTitle: null,
+          headerTintColor: colors.textColor,
         }}
       />
       <RouteInicio.Screen
@@ -184,7 +194,7 @@ const RouteCursosComponent = ({ route, navigation }) => {
     apellido: apellido,
     telefono: telefono,
     mail: mail,
-    cursosData: DATA,
+    cursosData: CURSOS,
   };
 
   return (
@@ -195,6 +205,15 @@ const RouteCursosComponent = ({ route, navigation }) => {
         initialParams={userParams}
         options={{
           headerShown: false,
+        }}
+      />
+      <RouteCursos.Screen
+        name="Presentacion"
+        component={Presentation}
+        initialParams={userParams}
+        options={{
+          headerTitle: null,
+          headerTintColor: colors.textColor,
         }}
       />
       <RouteCursos.Screen

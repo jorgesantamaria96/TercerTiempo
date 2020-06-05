@@ -676,7 +676,7 @@ export const CURSOS = [
     type: "barbijos",
     id: 1,
     title: "Confección de barbijos o tapabocas",
-    detailCard: "Aprovechando la pandemia por la que estamos atravesando y la obligación del uso del tapaboca",
+    detailCard: "Aprovechando la pandemia por la que estamos atravesando y la obligación del uso del tapaboca...",
     presentation: {
       presentation1: {
         item: false,

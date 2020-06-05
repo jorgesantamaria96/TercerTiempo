@@ -7,7 +7,7 @@ import {
   FlatList,
   Image,
 } from "react-native";
-import CardItem from "../../../components/home/CardItem";
+import Item from "../../../components/home/Item";
 import { colors } from "../../../constants/constants";
 
 const Cursos = ({ route, navigation }) => {
@@ -23,6 +23,7 @@ const Cursos = ({ route, navigation }) => {
     data: cursosData,
     mail: mail,
   };
+  const data = cursosData;
 
   return (
     <ScrollView>
@@ -51,22 +52,21 @@ const Cursos = ({ route, navigation }) => {
         </View>
         <FlatList
           style={{ width: "100%" }}
-          data={params.data}
-          onRefresh={() => {} /* fetchData() */}
-          refreshing={loading}
+          data={data}
           renderItem={({ item }) => {
             return (
-              <CardItem
+              <Item
+                type={item.type}
                 title={item.title}
-                image={item.image}
-                detail={item.detail}
-                rating={item.ranking}
+                detailCard={item.detailCard}
+                presentation={item.presentation}
                 onPress={() =>
-                  navigation.navigate("Details", {
-                    id: item.id,
+                  navigation.navigate("Presentacion", {
+                    type: item.type,
                     title: item.title,
-                    detail: item.detail,
-                    ranking: item.ranking,
+                    image: item.image,
+                    curso: item.curso,
+                    presentacion: item.presentation,
                   })
                 }
               />

@@ -10,6 +10,7 @@ import {
   TouchableOpacity,
 } from "react-native";
 import CardItem from "../../../components/home/CardItem";
+import Item from "../../../components/home/Item";
 import { colors } from "../../../constants/constants";
 import Icon from "react-native-vector-icons/FontAwesome";
 
@@ -66,7 +67,9 @@ const Inicio = ({ route, navigation }) => {
         <View style={{ paddingHorizontal: 20 }}>
           <Text style={styles.hi}>Hola {params.nombre}!</Text>
         </View>
-        <View style={{ paddingHorizontal: 20 }}>
+
+        {/* SEARCH DESACTIVADO POR EL MOMENTO */}
+        {/* <View style={{ paddingHorizontal: 20 }}>
           <Text style={styles.whatsLearnToday}>Qué deseas aprender hoy?</Text>
         </View>
         <View style={{ flexDirection: "row" }}>
@@ -81,26 +84,27 @@ const Inicio = ({ route, navigation }) => {
           <TouchableOpacity style={styles.icon}>
             <Icon name="search" size={15} style={styles.searchIcon} />
           </TouchableOpacity>
-        </View>
+        </View> */}
+
         <View style={styles.mostView}>
-          <Text style={styles.mostViewText}>Los más vistos</Text>
+          <Text style={styles.mostViewText}>Los cursos más vistos</Text>
         </View>
         <FlatList
           style={{ width: "100%" }}
           data={data}
           renderItem={({ item }) => {
             return (
-              <CardItem
+              <Item
+                type={item.type}
                 title={item.title}
-                image={item.image}
-                detail={item.detail}
-                rating={item.ranking}
+                detailCard={item.detailCard}
                 onPress={() =>
-                  navigation.navigate("Details", {
-                    id: item.id,
+                  navigation.navigate("Presentacion", {
+                    type: item.type,
                     title: item.title,
-                    detail: item.detail,
-                    ranking: item.ranking,
+                    image: item.image,
+                    curso: item.curso,
+                    presentacion: item.presentation,
                   })
                 }
               />
