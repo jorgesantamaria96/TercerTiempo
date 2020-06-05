@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "Tercer Tiempo",
-    "slug": "TercerTiempo",
+    "slug": "tercer_tiempo",
     "platforms": [
       "ios",
       "android",
@@ -9,7 +9,7 @@
     ],
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icono2.png",
+    "icon": "./assets/icon.png",
     "splash": {
       "image": "./assets/images/splash.png",
       "resizeMode": "cover"
@@ -22,6 +22,10 @@
     ],
     "ios": {
       "supportsTablet": true
+    },
+    "android": {
+      "package": "com.tercertiempo",
+      "versionCode": 1
     }
   }
 }
