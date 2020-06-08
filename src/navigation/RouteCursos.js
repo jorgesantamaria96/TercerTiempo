@@ -5,6 +5,7 @@ import Cursos from "../screens/home/cursos/Cursos";
 import Presentation from "../screens/home/inicio/Presentation";
 import Clases from "../screens/home/inicio/Clases";
 import Modulo from "../screens/home/inicio/Modulo";
+import VideoPlayer from "../screens/home/inicio/VideoPlayerView";
 
 import { CURSOS } from "../data/data";
 import { colors } from "../constants/constants";
@@ -46,6 +47,22 @@ const RouteCursosComponent = ({ route, navigation }) => {
         name="Clases"
         component={Clases}
         initialParams={userParams}
+        options={{
+          headerTitle: null,
+          headerTintColor: colors.textColor,
+        }}
+      />
+      <RouteCursos.Screen
+        name="Modulo"
+        component={Modulo}
+        options={{
+          headerTitle: null,
+          headerTintColor: colors.textColor,
+        }}
+      />
+      <RouteInicio.Screen
+        name="Video"
+        component={VideoPlayer}
         options={{
           headerTitle: null,
           headerTintColor: colors.textColor,

@@ -1,11 +1,34 @@
-import React from "react";
-import { StyleSheet, View, Text, ScrollView } from "react-native";
+import React, { useEffect } from "react";
+import {
+  StyleSheet,
+  View,
+  Text,
+  ScrollView,
+  BackHandler,
+  TouchableOpacity,
+} from "react-native";
 import { colors } from "../../../constants/constants";
 import Icon from "react-native-vector-icons/FontAwesome";
 
 const Modulo = ({ route, navigation }) => {
+  useEffect(() => {
+    const backAction = () => {
+      if (navigation.dispatch.length > 0) {
+        navigation.pop();
+        return true;
+      }
+      return false;
+    };
+
+    const backHandler = BackHandler.addEventListener(
+      "hardwareBackPress",
+      backAction
+    );
+
+    return () => backHandler.remove();
+  }, []);
   const { clase, indice } = route.params;
-  console.log(clase);
+
   return (
     <View>
       <ScrollView>
@@ -14,6 +37,52 @@ const Modulo = ({ route, navigation }) => {
           <View style={styles.titleContainer}>
             <Text style={styles.title}>Clase {indice}</Text>
           </View>
+
+          {/* VIDEOS */}
+          {clase.videos ? (
+            <View
+              style={{
+                flexDirection: "row",
+                alignSelf: "flex-start",
+                paddingHorizontal: 20,
+              }}
+            >
+              {clase.videos.map((item, index) => {
+                return (
+                  <TouchableOpacity
+                    key={index}
+                    style={styles.videoContainer}
+                    onPress={() =>
+                      navigation.navigate("Video", { video: item })
+                    }
+                  >
+                    <View
+                      style={{
+                        flexDirection: "row",
+                        alignSelf: "center",
+                        padding: 5,
+                      }}
+                    >
+                      <Text style={styles.videoText}>Video {index + 1}</Text>
+                    </View>
+                    <View style={styles.iconVideo}>
+                      <Icon
+                        name="play-circle"
+                        size={50}
+                        style={{
+                          padding: 10,
+                          color: colors.ttblue,
+                          alignSelf: "center",
+                        }}
+                      />
+                    </View>
+                  </TouchableOpacity>
+                );
+              })}
+            </View>
+          ) : (
+            <View />
+          )}
 
           {/* TEXTO */}
           {clase.textClass.map((item, index) => {
@@ -56,7 +125,9 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
   },
   titleContainer: {
-    padding: 20,
+    paddingHorizontal: 20,
+    paddingTop: 20,
+    paddingBottom: 10,
     alignSelf: "flex-start",
   },
   title: {
@@ -79,6 +150,21 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
   },
   text: {},
+  videoContainer: {
+    margin: 5,
+    borderWidth: 0.1,
+    borderColor: colors.textColor,
+    borderRadius: 20,
+    elevation: 3,
+    backgroundColor: colors.background,
+    alignSelf: "center",
+  },
+  videoText: {
+    textAlign: "center",
+    color: colors.ttblue,
+    fontWeight: "bold",
+    padding: 5,
+  },
 });
 
 export default Modulo;

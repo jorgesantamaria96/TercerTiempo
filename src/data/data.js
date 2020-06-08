@@ -496,7 +496,7 @@ export const CURSOS = [
         },
         {
           images: ["table", "cicloPlastico", "cicloPapel"],
-          video: [
+          videos: [
             "https://www.youtube.com/watch?v=C1M8WdkqXMA",
             "https://www.youtube.com/watch?v=DFp61svGlBE",
             "https://www.youtube.com/watch?v=6kRtsPABg4A",
@@ -529,7 +529,7 @@ export const CURSOS = [
         },
         {
           images: null,
-          video: null,
+          videos: null,
           textClass: [
             {
               item: false,
@@ -599,7 +599,7 @@ export const CURSOS = [
         },
         {
           images: null,
-          video: ["https://www.youtube.com/watch?v=mlRCKEDVUk8"],
+          videos: ["https://www.youtube.com/watch?v=mlRCKEDVUk8"],
           textClass: [
             {
               item: false,
