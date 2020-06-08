@@ -5,9 +5,9 @@ import {
   StyleSheet,
   ScrollView,
   Image,
-  TextInput,
+  // TextInput,
   FlatList,
-  TouchableOpacity,
+  // TouchableOpacity,
 } from "react-native";
 import CardItem from "../../../components/home/CardItem";
 import Item from "../../../components/home/Item";
@@ -104,7 +104,7 @@ const Inicio = ({ route, navigation }) => {
                     title: item.title,
                     image: item.image,
                     curso: item.curso,
-                    presentacion: item.presentation,
+                    presentation: item.presentation,
                   })
                 }
               />

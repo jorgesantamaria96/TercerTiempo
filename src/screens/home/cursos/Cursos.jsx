@@ -66,7 +66,7 @@ const Cursos = ({ route, navigation }) => {
                     title: item.title,
                     image: item.image,
                     curso: item.curso,
-                    presentacion: item.presentation,
+                    presentation: item.presentation,
                   })
                 }
               />

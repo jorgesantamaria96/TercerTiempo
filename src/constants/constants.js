@@ -29,6 +29,7 @@ export const colors = {
     nameAuthorTextColor: '#A5A5A5',
     tabIconColor: '#8890A6',
     textInputLabelColor: '#FD7E77',
+    levelsBackground: '#F5F6FC',
 }
 
 export { width, height };
