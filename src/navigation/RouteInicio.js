@@ -4,6 +4,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import Inicio from "../screens/home/inicio/Inicio";
 import Presentation from "../screens/home/inicio/Presentation";
 import Clases from "../screens/home/inicio/Clases";
+import Modulo from "../screens/home/inicio/Modulo";
 
 import { CURSOS } from "../data/data";
 import { colors } from "../constants/constants";
@@ -42,9 +43,17 @@ const RouteInicioComponent = ({ route, navigation }) => {
         }}
       />
       <RouteInicio.Screen
-        name="Details"
+        name="Clases"
         component={Clases}
         initialParams={userParams}
+        options={{
+          headerTitle: null,
+          headerTintColor: colors.textColor,
+        }}
+      />
+      <RouteInicio.Screen
+        name="Modulo"
+        component={Modulo}
         options={{
           headerTitle: null,
           headerTintColor: colors.textColor,

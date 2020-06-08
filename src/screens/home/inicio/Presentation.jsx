@@ -75,8 +75,18 @@ const Presentation = ({ route, navigation }) => {
           <View>
             <Text style={styles.levelsLabel}>Niveles:</Text>
             {curso.map((item, index) => {
+              const i = 1;
               return (
-                <TouchableOpacity key={index} style={styles.levelContainer}>
+                <TouchableOpacity
+                  key={index}
+                  style={styles.levelContainer}
+                  onPress={() =>
+                    navigation.navigate("Clases", {
+                      clases: item,
+                      level: i,
+                    })
+                  }
+                >
                   <Text style={styles.levelTitle}>Nivel {index + 1}</Text>
                 </TouchableOpacity>
               );

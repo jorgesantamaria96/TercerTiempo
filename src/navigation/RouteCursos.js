@@ -4,6 +4,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import Cursos from "../screens/home/cursos/Cursos";
 import Presentation from "../screens/home/inicio/Presentation";
 import Clases from "../screens/home/inicio/Clases";
+import Modulo from "../screens/home/inicio/Modulo";
 
 import { CURSOS } from "../data/data";
 import { colors } from "../constants/constants";
@@ -42,7 +43,7 @@ const RouteCursosComponent = ({ route, navigation }) => {
         }}
       />
       <RouteCursos.Screen
-        name="Details"
+        name="Clases"
         component={Clases}
         initialParams={userParams}
         options={{
