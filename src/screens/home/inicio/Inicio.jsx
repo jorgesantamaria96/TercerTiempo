@@ -9,10 +9,8 @@ import {
   FlatList,
   // TouchableOpacity,
 } from "react-native";
-import CardItem from "../../../components/home/CardItem";
 import Item from "../../../components/home/Item";
 import { colors } from "../../../constants/constants";
-import Icon from "react-native-vector-icons/FontAwesome";
 
 const initialState = {
   loading: false,

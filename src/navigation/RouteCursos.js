@@ -60,7 +60,7 @@ const RouteCursosComponent = ({ route, navigation }) => {
           headerTintColor: colors.textColor,
         }}
       />
-      <RouteInicio.Screen
+      <RouteCursos.Screen
         name="Video"
         component={VideoPlayer}
         options={{
