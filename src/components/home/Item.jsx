@@ -7,8 +7,10 @@ const Item = ({ type, title, detailCard, presentation, onPress }) => {
   const renderImagePresentation = (image) => {
     const Reciclado = require("../../../assets/images/cursos/reciclado/reciclado.jpg");
     const Barbijo = require("../../../assets/images/cursos/barbijos/barbijos.jpg");
+    const BloquesYAdoquines = require("../../../assets/images/cursos/bloquesyadoquines/bloquesyadoquines.jpg");
     if (image === "barbijos") return Barbijo;
     if (image === "reciclado") return Reciclado;
+    if (image === "bloquesyadoquines") return BloquesYAdoquines;
   };
 
   return (

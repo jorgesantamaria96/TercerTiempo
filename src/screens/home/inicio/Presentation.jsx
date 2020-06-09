@@ -29,14 +29,16 @@ const Presentation = ({ route, navigation }) => {
     return () => backHandler.remove();
   }, []);
 
-  const { type, title, curso, presentation } = route.params;
+  const { type, title, image, pdf, curso, presentation } = route.params;
 
   const renderImageCurso = (type) => {
     const Reciclado = require("../../../../assets/images/cursos/reciclado/reciclado.jpg");
     const Barbijos = require("../../../../assets/images/cursos/barbijos/barbijos.jpg");
+    const BloquesYAdoquines = require("../../../../assets/images/cursos/bloquesyadoquines/bloquesyadoquines.jpg");
 
     if (type === "reciclado") return Reciclado;
     if (type === "barbijos") return Barbijos;
+    if (type === "bloquesyadoquines") return BloquesYAdoquines;
   };
 
   return (

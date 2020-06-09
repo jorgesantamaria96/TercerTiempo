@@ -22,11 +22,13 @@ export const CURSOS = [
       },
     ],
     image: "reciclado",
+    pdf: null,
     curso: [
       [
         {
           images: null,
           videos: ["https://www.youtube.com/watch?v=ZEgLWrMJd2M"],
+          pdf: null,
           textClass: [
             {
               item: false,
@@ -92,6 +94,7 @@ export const CURSOS = [
         {
           images: null,
           videos: ["https://www.youtube.com/watch?v=gxzLhPteufw"],
+          pdf: null,
           textClass: [
             {
               item: false,
@@ -208,6 +211,7 @@ export const CURSOS = [
         {
           images: null,
           videos: null,
+          pdf: null,
           textClass: [
             {
               item: false,
@@ -355,6 +359,7 @@ export const CURSOS = [
         {
           images: ["reciclado"],
           videos: ["https://www.youtube.com/watch?v=YiHTNfKJwAw"],
+          pdf: null,
           textClass: [
             {
               item: false,
@@ -402,6 +407,7 @@ export const CURSOS = [
         {
           images: ["arbolreciclado"],
           videos: null,
+          pdf: null,
           textClass: [
             {
               item: false,
@@ -501,6 +507,7 @@ export const CURSOS = [
             "https://www.youtube.com/watch?v=DFp61svGlBE",
             "https://www.youtube.com/watch?v=6kRtsPABg4A",
           ],
+          pdf: null,
           textClass: [
             {
               item: false,
@@ -530,6 +537,7 @@ export const CURSOS = [
         {
           images: null,
           videos: null,
+          pdf: null,
           textClass: [
             {
               item: false,
@@ -600,6 +608,7 @@ export const CURSOS = [
         {
           images: null,
           videos: ["https://www.youtube.com/watch?v=mlRCKEDVUk8"],
+          pdf: null,
           textClass: [
             {
               item: false,
@@ -720,11 +729,13 @@ export const CURSOS = [
       },
     ],
     image: "barbijos",
+    pdf: null,
     curso: [
       [
         {
           images: null,
           videos: ["https://www.youtube.com/watch?v=ys6Vgq9zbN0"],
+          pdf: null,
           textClass: [
             {
               item: false,
@@ -813,6 +824,7 @@ export const CURSOS = [
         {
           images: null,
           videos: ["https://www.youtube.com/watch?v=XHUg8khkcKI"],
+          pdf: null,
           textClass: [
             {
               item: false,
@@ -824,6 +836,7 @@ export const CURSOS = [
         {
           images: null,
           videos: ["https://www.youtube.com/watch?v=tGEuRgdK6_Y"],
+          pdf: null,
           textClass: [
             {
               item: false,
@@ -832,7 +845,38 @@ export const CURSOS = [
             },
           ],
         },
+        {
+          images: null,
+          videos: ["https://www.youtube.com/watch?v=fVpbMIkk_cE"],
+          pdf: null,
+          textClass: [],
+        },
       ],
     ],
+  },
+  {
+    type: "bloquesyadoquines",
+    id: 2,
+    title: "Fabricación de bloques y adoquines",
+    detailCard: "En este espacio encontraran un manual con contenidos técnicos referidos a la enseñanza...",
+    presentation: [
+      {
+        item: false,
+        text: "En este espacio encontraran un manual con contenidos técnicos referidos a la enseñanza para la producción de los diferentes tipos de bloques de cemento y arena, concretos y material reciclado entre otros que se pueden fabricar con la máquina o \"bloquera\", a motor eléctrico.",
+      },
+    ],
+    image: "bloquesyadoquines",
+    curso: [[{
+      images: null,
+      videos: null,
+      pdf: ["bloquesyadoquines"],
+      textClass: [
+        {
+          item: false,
+          title: true,
+          text: "Fabricación de Bloques y Adoquines"
+        },
+      ],
+    }]],
   },
 ];

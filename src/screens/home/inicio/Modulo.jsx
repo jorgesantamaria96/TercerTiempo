@@ -6,6 +6,7 @@ import {
   ScrollView,
   BackHandler,
   TouchableOpacity,
+  Image,
 } from "react-native";
 import { colors } from "../../../constants/constants";
 import Icon from "react-native-vector-icons/FontAwesome";
@@ -28,6 +29,7 @@ const Modulo = ({ route, navigation }) => {
     return () => backHandler.remove();
   }, []);
   const { clase, indice } = route.params;
+  console.log(clase);
 
   return (
     <View>
@@ -40,62 +42,124 @@ const Modulo = ({ route, navigation }) => {
 
           {/* VIDEOS */}
           {clase.videos ? (
-            <View
-              style={{
-                flexDirection: "row",
-                alignSelf: "flex-start",
-                paddingHorizontal: 20,
-              }}
-            >
-              {clase.videos.map((item, index) => {
-                return (
-                  <TouchableOpacity
-                    key={index}
-                    style={styles.videoContainer}
-                    onPress={() =>
-                      navigation.navigate("Video", { video: item })
-                    }
-                  >
-                    <View
-                      style={{
-                        flexDirection: "row",
-                        alignSelf: "center",
-                        padding: 5,
-                      }}
+            <View>
+              <Text style={styles.titleModulo}>Videos:</Text>
+              <View style={{ marginLeft: 20, flexDirection: "row" }}>
+                {clase.videos.map((item, index) => {
+                  return (
+                    <TouchableOpacity
+                      key={index}
+                      style={styles.videoContainer}
+                      onPress={() =>
+                        navigation.navigate("Video", { video: item })
+                      }
                     >
-                      <Text style={styles.videoText}>Video {index + 1}</Text>
-                    </View>
-                    <View style={styles.iconVideo}>
-                      <Icon
-                        name="play-circle"
-                        size={50}
+                      <View
                         style={{
-                          padding: 10,
-                          color: colors.ttblue,
+                          flexDirection: "row",
                           alignSelf: "center",
+                          padding: 5,
                         }}
+                      >
+                        <Text style={styles.videoText}>Video {index + 1}</Text>
+                      </View>
+                      <View style={styles.iconVideo}>
+                        <Icon
+                          name="play-circle"
+                          size={50}
+                          style={{
+                            padding: 10,
+                            color: colors.ttblue,
+                            alignSelf: "center",
+                          }}
+                        />
+                      </View>
+                    </TouchableOpacity>
+                  );
+                })}
+              </View>
+            </View>
+          ) : (
+            <View />
+          )}
+
+          {/* PDF */}
+          {clase.pdf ? (
+            <View>
+              <Text style={styles.titleModulo}>Documentación:</Text>
+              <View style={{ marginLeft: 20, flexDirection: "row" }}>
+                {clase.pdf.map((item, index) => {
+                  return (
+                    <TouchableOpacity
+                      key={index}
+                      style={styles.pdfContainer}
+                      onPress={() => navigation.navigate("Pdf", { pdf: item })}
+                    >
+                      <View
+                        style={{
+                          flexDirection: "row",
+                          alignSelf: "center",
+                          padding: 5,
+                        }}
+                      >
+                        <Text style={styles.pdfText}>PDF {index + 1}</Text>
+                      </View>
+                      <View style={styles.iconPdf}>
+                        <Icon
+                          name="file-o"
+                          size={50}
+                          style={{
+                            padding: 10,
+                            color: colors.ttred,
+                            alignSelf: "center",
+                          }}
+                        />
+                      </View>
+                    </TouchableOpacity>
+                  );
+                })}
+              </View>
+            </View>
+          ) : (
+            <View />
+          )}
+
+          {/* IMÁGENES */}
+          {clase.images ? (
+            <View>
+              <Text style={styles.titleModulo}>Imágenes:</Text>
+              <View style={styles.imageContainer}>
+                {clase.images.map((item, index) => {
+                  return (
+                    <View key={index}>
+                      <Image
+                        source={RenderImageClase(item)}
+                        style={styles.image}
                       />
                     </View>
-                  </TouchableOpacity>
-                );
-              })}
+                  );
+                })}
+              </View>
             </View>
           ) : (
             <View />
           )}
 
           {/* TEXTO */}
-          {clase.textClass.map((item, index) => {
-            return (
-              <View key={index}>
-                <StyleTextClass
-                  item={item.item}
-                  title={item.title}
-                  text={item.text}
-                />
-              </View>
-            );
-          })}
+          <View>
+            <Text style={styles.titleModulo}>Información:</Text>
+            {clase.textClass.map((item, index) => {
+              return (
+                <View key={index} style={{ paddingTop: 20 }}>
+                  <StyleTextClass
+                    item={item.item}
+                    title={item.title}
+                    text={item.text}
+                  />
+                </View>
+              );
+            })}
+          </View>
         </View>
       </ScrollView>
     </View>
@@ -119,6 +183,20 @@ const StyleTextClass = ({ item, title, text }) => {
   );
 };
 
+const RenderImageClase = (image) => {
+  const ArbolRecicldo = require("../../../../assets/images/cursos/reciclado/clases/arbolreciclado.jpg");
+  const CicloPapel = require("../../../../assets/images/cursos/reciclado/clases/cicloPapel.jpg");
+  const CicloPlastico = require("../../../../assets/images/cursos/reciclado/clases/cicloPlastico.jpg");
+  const Contenedores = require("../../../../assets/images/cursos/reciclado/clases/contenedores.jpg");
+  const Tabla = require("../../../../assets/images/cursos/reciclado/clases/tabla.jpg");
+
+  if (image === "arbolreciclado") return ArbolRecicldo;
+  if (image === "cicloPapel") return CicloPapel;
+  if (image === "cicloPlastico") return CicloPlastico;
+  if (image === "contenedores") return Contenedores;
+  if (image === "table") return Tabla;
+};
+
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
@@ -134,6 +212,12 @@ const styles = StyleSheet.create({
     fontSize: 24,
     color: colors.ttblue,
     fontWeight: "bold",
+  },
+  titleModulo: {
+    fontSize: 20,
+    paddingHorizontal: 20,
+    paddingVertical: 10,
+    color: colors.textInputLabelColor,
   },
   textClassContainer: {
     paddingHorizontal: 10,
@@ -153,17 +237,40 @@ const styles = StyleSheet.create({
   videoContainer: {
     margin: 5,
     borderWidth: 0.1,
-    borderColor: colors.textColor,
+    borderColor: colors.ttblue,
     borderRadius: 20,
     elevation: 3,
     backgroundColor: colors.background,
-    alignSelf: "center",
+    alignSelf: "flex-start",
   },
   videoText: {
     textAlign: "center",
     color: colors.ttblue,
     fontWeight: "bold",
     padding: 5,
+  },
+  pdfContainer: {
+    margin: 5,
+    borderWidth: 0.1,
+    borderColor: colors.ttred,
+    borderRadius: 20,
+    elevation: 3,
+    backgroundColor: colors.background,
+    alignSelf: "flex-start",
+  },
+  pdfText: {
+    textAlign: "center",
+    color: colors.ttred,
+    fontWeight: "bold",
+    padding: 5,
+  },
+  imageContainer: {
+    alignSelf: "center",
+    padding: 10,
+  },
+  image: {
+    height: 200,
+    width: 300,
   },
 });
 

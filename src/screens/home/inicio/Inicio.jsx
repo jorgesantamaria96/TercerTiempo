@@ -101,6 +101,7 @@ const Inicio = ({ route, navigation }) => {
                     type: item.type,
                     title: item.title,
                     image: item.image,
+                    pdf: item.pdf,
                     curso: item.curso,
                     presentation: item.presentation,
                   })
