@@ -29,7 +29,7 @@ const Presentation = ({ route, navigation }) => {
     return () => backHandler.remove();
   }, []);
 
-  const { type, title, image, pdf, curso, presentation } = route.params;
+  const { type, title, curso, presentation } = route.params;
 
   const renderImageCurso = (type) => {
     const Reciclado = require("../../../../assets/images/cursos/reciclado/reciclado.jpg");

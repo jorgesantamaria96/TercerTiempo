@@ -40,6 +40,22 @@ const Modulo = ({ route, navigation }) => {
             <Text style={styles.title}>Clase {indice}</Text>
           </View>
 
+          {/* TEXTO */}
+          <View>
+            <Text style={styles.titleModulo}>Información:</Text>
+            {clase.textClass.map((item, index) => {
+              return (
+                <View key={index}>
+                  <StyleTextClass
+                    item={item.item}
+                    title={item.title}
+                    text={item.text}
+                  />
+                </View>
+              );
+            })}
+          </View>
+
           {/* VIDEOS */}
           {clase.videos ? (
             <View>
@@ -128,38 +144,45 @@ const Modulo = ({ route, navigation }) => {
           {clase.images ? (
             <View>
               <Text style={styles.titleModulo}>Imágenes:</Text>
-              <View style={styles.imageContainer}>
+              <View style={{ marginLeft: 20, flexDirection: "row" }}>
                 {clase.images.map((item, index) => {
                   return (
-                    <View key={index}>
-                      <Image
-                        source={RenderImageClase(item)}
-                        style={styles.image}
-                      />
-                    </View>
+                    <TouchableOpacity
+                      key={index}
+                      style={[styles.pdfContainer, { borderColor: "yellow" }]}
+                      onPress={() =>
+                        navigation.navigate("Imagen", { imagen: item })
+                      }
+                    >
+                      <View
+                        style={{
+                          flexDirection: "row",
+                          alignSelf: "center",
+                          padding: 5,
+                        }}
+                      >
+                        <Text style={styles.imageText}>Img {index + 1}</Text>
+                      </View>
+                      <View>
+                        <Icon
+                          name="image"
+                          size={50}
+                          style={{
+                            padding: 10,
+                            color: "orange",
+                            alignSelf: "center",
+                          }}
+                        />
+                      </View>
+                    </TouchableOpacity>
                   );
                 })}
+
               </View>
             </View>
           ) : (
             <View />
           )}
-
-          {/* TEXTO */}
-          <View>
-            <Text style={styles.titleModulo}>Información:</Text>
-            {clase.textClass.map((item, index) => {
-              return (
-                <View key={index} style={{ paddingTop: 20 }}>
-                  <StyleTextClass
-                    item={item.item}
-                    title={item.title}
-                    text={item.text}
-                  />
-                </View>
-              );
-            })}
-          </View>
         </View>
       </ScrollView>
     </View>
@@ -183,24 +206,11 @@ const StyleTextClass = ({ item, title, text }) => {
   );
 };
 
-const RenderImageClase = (image) => {
-  const ArbolRecicldo = require("../../../../assets/images/cursos/reciclado/clases/arbolreciclado.jpg");
-  const CicloPapel = require("../../../../assets/images/cursos/reciclado/clases/cicloPapel.jpg");
-  const CicloPlastico = require("../../../../assets/images/cursos/reciclado/clases/cicloPlastico.jpg");
-  const Contenedores = require("../../../../assets/images/cursos/reciclado/clases/contenedores.jpg");
-  const Tabla = require("../../../../assets/images/cursos/reciclado/clases/tabla.jpg");
-
-  if (image === "arbolreciclado") return ArbolRecicldo;
-  if (image === "cicloPapel") return CicloPapel;
-  if (image === "cicloPlastico") return CicloPlastico;
-  if (image === "contenedores") return Contenedores;
-  if (image === "table") return Tabla;
-};
-
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
     paddingHorizontal: 10,
+    marginBottom: 20,
   },
   titleContainer: {
     paddingHorizontal: 20,
@@ -264,13 +274,11 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     padding: 5,
   },
-  imageContainer: {
-    alignSelf: "center",
-    padding: 10,
-  },
-  image: {
-    height: 200,
-    width: 300,
+  imageText: {
+    textAlign: "center",
+    color: "orange",
+    fontWeight: "bold",
+    padding: 5,
   },
 });
 

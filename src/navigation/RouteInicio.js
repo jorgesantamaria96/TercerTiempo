@@ -7,6 +7,7 @@ import Clases from "../screens/home/inicio/Clases";
 import Modulo from "../screens/home/inicio/Modulo";
 import VideoPlayer from "../screens/home/inicio/VideoPlayerView";
 import PdfView from "../screens/home/inicio/PdfView";
+import Imagen from "../screens/home/inicio/Imagen";
 
 import { CURSOS } from "../data/data";
 import { colors } from "../constants/constants";
@@ -72,6 +73,14 @@ const RouteInicioComponent = ({ route, navigation }) => {
       <RouteInicio.Screen
         name="Pdf"
         component={PdfView}
+        options={{
+          headerTitle: null,
+          headerTintColor: colors.textColor,
+        }}
+      />
+      <RouteInicio.Screen
+        name="Imagen"
+        component={Imagen}
         options={{
           headerTitle: null,
           headerTintColor: colors.textColor,

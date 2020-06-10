@@ -3,7 +3,7 @@ import { View, StyleSheet, Text, Image, TouchableOpacity } from "react-native";
 import Icon from "react-native-vector-icons/FontAwesome";
 import { colors } from "../../constants/constants";
 
-const Item = ({ type, title, detailCard, presentation, onPress }) => {
+const Item = ({ type, title, detailCard, onPress }) => {
   const renderImagePresentation = (image) => {
     const Reciclado = require("../../../assets/images/cursos/reciclado/reciclado.jpg");
     const Barbijo = require("../../../assets/images/cursos/barbijos/barbijos.jpg");

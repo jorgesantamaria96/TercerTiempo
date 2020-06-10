@@ -4,7 +4,6 @@ import { WebView } from "react-native-webview";
 
 const PdfView = ({ route, navigation }) => {
   const { pdf } = route.params;
-  console.log(pdf);
 
   const renderPdf = (pdf) => {
     const BloquesYAdoquines = "file://../../../data/pdf/bloquesyadoquines.pdf";
