@@ -1135,6 +1135,293 @@ export const CURSOS = [
               text: "Una ves retiradas las escamas, se recomienda lavar el cabello con un shampoo con alquitrán y luego aplicar algún acondicionador.",
             },
           ],
+        },
+        {
+          images: null,
+          videos: ["https://www.youtube.com/watch?v=C5Gtib_Tkzs"],
+          pdf: null,
+          textClass: [
+            {
+              item: false,
+              title: true,
+              text: "Higiene y Seguridad. Manipulación de Herramientas de Trabajo.",
+            },
+            {
+              item: false,
+              title: false,
+              text: "LAS CAIDAS",
+            },
+            {
+              item: false,
+              title: false,
+              text: "1° Caídas al mismo nivel: los accidentes mas comunes se producen por tropiezos o resbalones debido a los siguientes factores:",
+            },
+            {
+              item: false,
+              title: false,
+              text: "Suelos irregulares, con roturas o desniveles, deslizantes o mojados.",
+            },
+            {
+              item: false,
+              title: false,
+              text: "Calzado inadecuado, desorden y falta de espacio",
+            },
+            {
+              item: false,
+              title: false,
+              text: "Las lesiones mas comunes son torceduras, contusiones, heridas diversas y/o fracturas.",
+            },
+            {
+              item: false,
+              title: false,
+              text: "Prevención:",
+            },
+            {
+              item: true,
+              title: false,
+              text: "El suele debe ser liso, sin desniveles y antideslizante. Que sean fáciles de limpiar.",
+            },
+            {
+              item: true,
+              title: false,
+              text: "No correr ni andar deprisa, los lugares de paso deben estar bien iluminados.",
+            },
+            {
+              item: true,
+              title: false,
+              text: "Mantener el orden y limpia toda la peluquería.",
+            },
+            {
+              item: true,
+              title: false,
+              text: "Usar calzado adecuado, antideslizante, en lo posible con taco menor a 5 cm.",
+            },
+            {
+              item: false,
+              title: false,
+              text: "2° Caídas a distinto nivel: se da por distintos factores como por ejemplo, la carencia de baranditas en las escaleras. O en lugares donde en el acceso es por medio de banquetas o sillas, y también en el uso inadecuado de escaleras de mano en las tareas de limpieza y almacenamiento en lugares altos.",
+            },
+            {
+              item: false,
+              title: false,
+              text: "Las lesiones mas frecuentes son: lesiones múltiples, fracturas, traumatismos internos y muerte.",
+            },
+            {
+              item: false,
+              title: false,
+              text: "Prevención:",
+            },
+            {
+              item: true,
+              title: false,
+              text: "Mantener las escaleras fijas siempre limpias y secas. Deben disponer de una barandilla mínima de unos 90 cm de altura.",
+            },
+            {
+              item: true,
+              title: false,
+              text: "Las escaleras de mano deben ser seguras y estar homologadas, nunca descompensar peso (desplazar peso y volver a subirse). Las escaleras no pueden ser pintadas a no ser que tengan un barniz transparente y antideslizante.",
+            },
+            {
+              item: false,
+              title: false,
+              text: "3° Caídas de objetos de manipulación: se da cuando se manipulan herramientas o envases de productos con las manos mojadas. También se debe tener en cuenta el estado de las estanterías, ver si están bien ancladas o los distintos muebles que se utilicen.",
+            },
+            {
+              item: false,
+              title: false,
+              text: "Las lesiones mas frecuentes son: golpes, cortes, contusiones y fracturas.",
+            },
+            {
+              item: false,
+              title: false,
+              text: "Prevención:",
+            },
+            {
+              item: true,
+              title: false,
+              text: "Las zonas en donde se ponen estanterías debe estar bien iluminada, disponer de accesos fáciles y seguros y, en todo momento mantenerlas limpias y ordenadas.",
+            },
+            {
+              item: true,
+              title: false,
+              text: "Altillo o zonas elevadas, siempre con barandillas rígidas que impidan la caída de objetos al suelo.",
+            },
+            {
+              item: true,
+              title: false,
+              text: "Cualquier tipo de herramienta de trabajo deberán entregarse en mano, nunca lanzarlas.",
+            },
+            {
+              item: false,
+              title: true,
+              text: "MANIPULACION DE HERRAMIENTAS",
+            },
+            {
+              item: false,
+              title: false,
+              text: "1° Cortes con herramientas manuales: las lesiones se producen por:",
+            },
+            {
+              item: true,
+              title: false,
+              text: "Utilizar herramientas con mangos deteriorados o en mal estado.",
+            },
+            {
+              item: true,
+              title: false,
+              text: "Utilizar utensilios afilados.",
+            },
+            {
+              item: true,
+              title: false,
+              text: "Dar a las herramientas un uso para el que no son diseñadas.",
+            },
+            {
+              item: true,
+              title: false,
+              text: "Dejar las herramientas punzantes y de cortes en lugares que no corresponden.",
+            },
+            {
+              item: false,
+              title: false,
+              text: "Las lesiones frecuentes son: cortes y pinchazos.",
+            },
+            {
+              item: false,
+              title: false,
+              text: "Prevención:",
+            },
+            {
+              item: true,
+              title: false,
+              text: "Seguir las instrucciones de los fabricantes en cuanto a la limpieza y mantenimiento de la herramienta.",
+            },
+            {
+              item: true,
+              title: false,
+              text: "Si se cae algún objeto de vidrio, limpias inmediatamente retirando los vidrios.",
+            },
+            {
+              item: true,
+              title: false,
+              text: "No gesticular ni señalar con las herramientas.",
+            },
+            {
+              item: true,
+              title: false,
+              text: "Lavar y secar la herramienta correctamente.",
+            },
+            {
+              item: true,
+              title: false,
+              text: "Evitar trabajar con los bolsillos del delantal llenos de utensilios cortantes.",
+            },
+            {
+              item: false,
+              title: false,
+              text: "2° Contacto directos e indirectos: se producen habitualmente por:",
+            },
+            {
+              item: true,
+              title: false,
+              text: "Enchufes rotos.",
+            },
+            {
+              item: true,
+              title: false,
+              text: "Cables de instalación o aparatos en mal estado.",
+            },
+            {
+              item: true,
+              title: false,
+              text: "Conexiones mal realizadas.",
+            },
+            {
+              item: true,
+              title: false,
+              text: "Líquidos derramados cerca de los cuadros eléctricos.",
+            },
+            {
+              item: false,
+              title: false,
+              text: "Las lesiones que produce: muerte por paro cardiaco, por asfixia, quemaduras de diversos grados.",
+            },
+            {
+              item: false,
+              title: false,
+              text: "Prevención:",
+            },
+            {
+              item: true,
+              title: false,
+              text: "Las instalaciones deben contar con tomas de tierra. No usar adaptadores y poner tomas de corriente,",
+            },
+            {
+              item: true,
+              title: false,
+              text: "No conectar varios aparatos a la misma toma de corriente ya que puede provocar coto circuito.",
+            },
+            {
+              item: true,
+              title: false,
+              text: "Para desenchufar un aparato nunca tirar del cable, siempre del enchufe.",
+            },
+            {
+              item: true,
+              title: false,
+              text: "Nunca desenchufar los aparatos eléctricos encendidos y con las manos mojadas o suelo húmedo.",
+            },
+            {
+              item: false,
+              title: false,
+              text: "3° incendios: puede producirse por trabajar con:",
+            },
+            {
+              item: true,
+              title: false,
+              text: "Manipulación inadecuada de productos inflamables, tales como acetonas, aerosoles o lacas fijadoras.",
+            },
+            {
+              item: true,
+              title: false,
+              text: "Instalación de gas, por la proximidad de materiales combustibles a calentadores, calderas, etc.",
+            },
+            {
+              item: true,
+              title: false,
+              text: "Instalación de aparatos eléctricos. Su combustión puede producirse por un cortocircuito o sobrecarga.",
+            },
+            {
+              item: false,
+              title: false,
+              text: "Las lesiones frecuentes son: quemaduras de primer, segundo o tercer grado, intoxicación por humos, ahogamiento por falta de oxigeno y muerte.",
+            },
+            {
+              item: false,
+              title: false,
+              text: "Prevención:",
+            },
+            {
+              item: true,
+              title: false,
+              text: "Mantener libre de obstáculos la zona de extinguidores.",
+            },
+            {
+              item: true,
+              title: false,
+              text: "El orden y la limpieza son los mejores aliados contra el fuego.",
+            },
+            {
+              item: true,
+              title: false,
+              text: "Extinguidores: llevar a cabo su revisión y mantenimiento. Señaliza salida de emergencia.",
+            },
+            {
+              item: true,
+              title: false,
+              text: "No colocar material combustible sobre superficies alientes o aparatos eléctricos.",
+            },
+          ],
         }
       ],
     ],
