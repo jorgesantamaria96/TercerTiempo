@@ -1630,6 +1630,40 @@ export const CURSOS = [
           },
         ],
       },
+      {
+        images: null,
+        videos: ["https://www.youtube.com/watch?v=iYZNrpj4DCg"],
+        pdf: null,
+        textClass: [
+          {
+            item: false,
+            title: true,
+            text: "Formaciones Fijas y Móviles",
+          },
+          {
+            item: false,
+            title: false,
+            text: "Esta clase estará dedicada a explicar las formaciones que se dan durante el partido, tanto fijas como móviles. Explicando el scrum, lineout, maul y rucks. En ambas versiones de rugby, rugby 15 y rugby 7’s.",
+          },
+        ],
+      },
+      {
+        images: null,
+        videos: ["https://www.youtube.com/watch?v=9z7ZRLDOmTc"],
+        pdf: null,
+        textClass: [
+          {
+            item: false,
+            title: true,
+            text: "Ejercicios Físicos básicos para realizar en casa",
+          },
+          {
+            item: false,
+            title: false,
+            text: "En esta clase veremos, ejercicios para realizar, según nivel de cada participante. No solamente haremos los ejercicios, Sino que también mostraremos algunos ejercicios de movilidad articular y flexibilidad dinámica para poder entrar en calor.",
+          },
+        ],
+      }
     ],],
   },
 ];
