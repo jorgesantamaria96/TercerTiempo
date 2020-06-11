@@ -900,7 +900,7 @@ export const CURSOS = [
     curso: [[{
       images: null,
       videos: null,
-      pdf: ["termotanquessolares"],
+      pdf: ["termotanque"],
       textClass: null,
     }]]
   },

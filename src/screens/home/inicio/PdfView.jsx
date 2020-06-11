@@ -1,19 +1,20 @@
 import React from "react";
 import { View, StyleSheet } from "react-native";
-import { WebView } from "react-native-webview";
+import PDFReader from "rn-pdf-reader-js";
 
 const PdfView = ({ route, navigation }) => {
   const { pdf } = route.params;
+  console.log(renderPdf("termotanque"))
 
-  const renderPdf = (pdf) => {
-    const BloquesYAdoquines = "file://../../../data/pdf/bloquesyadoquines.pdf";
-    const Termotanque = "file://../../../data/pdf/termotanque.pdf";
-
-    if (pdf === "bloquesyadoquines") return BloquesYAdoquines;
+  function renderPdf(pdf) {
+    const BloquesYAdoquines = "";
+    const Termotanque = "http://134.122.118.141/paso_a_paso_termotanque-inta.pdf";
+    
     if (pdf === "termotanque") return Termotanque;
   };
-
-  return <View />;
+  const source = "";
+  
+  return <PDFReader source={{ uri: renderPdf(pdf) }} useGoogleReader={true}  />;
 };
 
 const style = StyleSheet.create({});
