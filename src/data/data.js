@@ -1422,6 +1422,163 @@ export const CURSOS = [
               text: "No colocar material combustible sobre superficies alientes o aparatos eléctricos.",
             },
           ],
+        },
+        {
+          images: null,
+          videos: ["https://www.youtube.com/watch?v=NaXmbqomvYI"],
+          pdf: null,
+          textClass: [
+            {
+              item: false,
+              title: true,
+              text: "Atención al Cliente",
+            },
+            {
+              item: false,
+              title: false,
+              text: "El nivel del servicio al cliente en un salón de belleza puede hacer o deshacer el futuro de tu negocio. Los clientes que reciben un servicio superior de tu parte y de tu personal serán clientes que probablemente repitan y puede que recomiende tu servicio a otras personas. Por otro lado, los recuerdos de un mal servicio puede repercutir negativamente en la cantidad de nuevos clientes que recibas.",
+            },
+            {
+              item: false,
+              title: false,
+              text: "No debes ver el tema económico sino humano, debes tener en cuenta que el cliente viene a buscar un buen servicio:",
+            },
+            {
+              item: true,
+              title: false,
+              text: "A cortarse el cabello.",
+            },
+            {
+              item: true,
+              title: false,
+              text: "A sentirse mas bello.",
+            },
+            {
+              item: true,
+              title: false,
+              text: "A buscar comodidad.",
+            },
+            {
+              item: true,
+              title: false,
+              text: "Levantar su autoestima.",
+            },
+            {
+              item: false,
+              title: false,
+              text: "Teniendo en cuenta que la competencia entre los salones de belleza es cada ves mas fuerte y el cliente tiene la posibilidad de elegir entre varias empresas para satisfacer sus necesidades, es indispensable que los salones logren la fidelidad de sus clientes.",
+            },
+            {
+              item: false,
+              title: false,
+              text: "Esto implica aplicar estrategias de retención de clientes, para poder mantener durante mucho tiempo a los mas rentables (clientes).",
+            },
+            {
+              item: false,
+              title: false,
+              text: "Las personas que ven a los clientes solo como una fuente de ingresos, cometen el error de no tratarlos con la atención que se merecen. A su vez, el trabajo del peluquero se convierte en una rutina fría y aburrida.",
+            },
+            {
+              item: false,
+              title: true,
+              text: "Entender las necesidades del cliente:",
+            },
+            {
+              item: false,
+              title: false,
+              text: "La clave para la administración de un excelente servicio comienza con la comprensión de éste (cliente). Es importante no llevar a cabo cualquier transacción comercial con los supuestos acerca de lo que tu cliente puede o no querer. Antes de ofrecer tus servicios, habla con tu cliente sobre sus necesidades y expectativas sobre tu servicio. Has preguntar para obtener una comprensión completa de lo que esta buscando, para que ambos estén en la misma pagina respecto a los resultados y expectativas. Resuelve cualquier duda o pregunta que tu cliente pueda tener y establece un acuerdo sobre los servicios que se llevaran a cabo y como van a ser prestados.",
+            },
+            {
+              item: false,
+              title: true,
+              text: "Ser honesto con tu cliente:",
+            },
+            {
+              item: false,
+              title: false,
+              text: "Si tu cliente tiene una necesidad o inquietitud sobre tus servicios que simplemente no se pueden cumplir, déjaselo saber de inmediato. No hagas promesas de resultados que no puedas entregar en un esfuerzo por complacerlo. Es importante no engañar a tus clientes con una campaña sobre lo que pueden ofrecer tus servicios, sobre todo si éstos no cumplen con las expectativas.",
+            },
+            {
+              item: false,
+              title: true,
+              text: "Has que el servicio sea universal entre todo el personal:",
+            },
+            {
+              item: false,
+              title: false,
+              text: "El servicio con el cliente no se inicia y termina contigo. Para que puedas tener la satisfacción de los mismos es necesario que sienta que estuvo bien tratado por todos los miembros de tu personal.",
+            },
+            {
+              item: false,
+              title: false,
+              text: "Todos los empleados, si tienen un impacto directo en la atención del cliente o no, deben tener cuidado de tratarlo bien en todo momento. Los empleados que están directamente involucrados en los servicios que se prestan, también deberían estar perfectamente informados de las necesidades y expectativas de éste para satisfacerlas.",
+            },
+            {
+              item: false,
+              title: true,
+              text: "Mantenlo agradable:",
+            },
+            {
+              item: false,
+              title: false,
+              text: "La amabilidad es la clave del servicio. Has que tu cliente se sienta acogido y respetado en todo momento. Seguir otros concejos de servicio a clientes no hará mucho bien si la entrega es de una manera cortante u hostil. A menudo, la gente recuerda haber recibido lo que necesitaba de un servicio, pero se quejan de la actitud desagradable y negativa del personal, llevándolos a buscar otros lugares para un nuevo proveedor de servicios. Tu cliente debe sentirse lo suficientemente cómodo en tu espacio para querer volver a tu negocio en el futuro.",
+            },
+            {
+              item: false,
+              title: true,
+              text: "DECALOGO A MI CLIENTE:",
+            },
+            {
+              item: false,
+              title: false,
+              text: "Adoptare una actitud positiva. Mi cliente se merece siempre ser tratado con cordialidad y un alto nivel de servicio.",
+            },
+            {
+              item: false,
+              title: false,
+              text: "Mantendré una relación cercana y respetuosa. Hare que mi cliente siempre sepa que estoy cerca para él y dispuesto a ayudarlo.",
+            },
+            {
+              item: false,
+              title: false,
+              text: "Estableceré empatía con mi cliente. Seré un aliado, que sepa que quiero lo mejor para él.",
+            },
+            {
+              item: false,
+              title: false,
+              text: "Orientare a mi cliente. Mi prioridad es satisfacer sus necesidades y ofrecerle una solución optima.",
+            },
+            {
+              item: false,
+              title: false,
+              text: "Mantendré informado a mi cliente de mis servicios y ofertas. Lo conoceré a tal punto que le podre ofrecer servicios y promociones a su medida.",
+            },
+            {
+              item: false,
+              title: false,
+              text: "Hare continuo seguimiento. Siempre estaré atento al progreso hasta finalizar.",
+            },
+            {
+              item: false,
+              title: false,
+              text: "Marcare la diferencia en mi relación con mi cliente. Lograre posicionarme en la mente de tal forma que solo me busque a mi.",
+            },
+            {
+              item: false,
+              title: false,
+              text: "Todo es posible. Cada cliente es importante y sus necesidades son mis necesidades.",
+            },
+            {
+              item: false,
+              title: false,
+              text: "Siempre puedo mejorar. Cada ves que mi cliente regrese a mi seré mejor que la ultima vez.",
+            },
+            {
+              item: false,
+              title: false,
+              text: "Nunca dejare de sonreír. Es gratis y siempre regalare una sonrisa sincera a mi cliente.",
+            },
+          ],
         }
       ],
     ],
