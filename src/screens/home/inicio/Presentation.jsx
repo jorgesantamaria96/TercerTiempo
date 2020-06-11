@@ -35,10 +35,16 @@ const Presentation = ({ route, navigation }) => {
     const Reciclado = require("../../../../assets/images/cursos/reciclado/reciclado.jpg");
     const Barbijos = require("../../../../assets/images/cursos/barbijos/barbijos.jpg");
     const BloquesYAdoquines = require("../../../../assets/images/cursos/bloquesyadoquines/bloquesyadoquines.jpg");
+    const Termotanque = require("../../../../assets/images/cursos/termotanques/termotanque.jpeg");
+    const Peluqueria = require("../../../../assets/images/cursos/peluqueria/peluqueria.jpg");
+    const EscuelaDeRugby = require("../../../../assets/images/cursos/escueladerugby/escueladerugby.jpg");
 
     if (type === "reciclado") return Reciclado;
     if (type === "barbijos") return Barbijos;
     if (type === "bloquesyadoquines") return BloquesYAdoquines;
+    if (type === "termotanque") return Termotanque;
+    if (type === "peluqueria") return Peluqueria;
+    if (type === "escueladerugby") return EscuelaDeRugby;
   };
 
   return (

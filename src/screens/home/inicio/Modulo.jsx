@@ -41,20 +41,24 @@ const Modulo = ({ route, navigation }) => {
           </View>
 
           {/* TEXTO */}
-          <View>
-            <Text style={styles.titleModulo}>Información:</Text>
-            {clase.textClass.map((item, index) => {
-              return (
-                <View key={index}>
-                  <StyleTextClass
-                    item={item.item}
-                    title={item.title}
-                    text={item.text}
-                  />
-                </View>
-              );
-            })}
-          </View>
+          {clase.textClass ? (
+            <View>
+              <Text style={styles.titleModulo}>Información:</Text>
+              {clase.textClass.map((item, index) => {
+                return (
+                  <View key={index}>
+                    <StyleTextClass
+                      item={item.item}
+                      title={item.title}
+                      text={item.text}
+                    />
+                  </View>
+                );
+              })}
+            </View>
+          ) : (
+            <View />
+          )}
 
           {/* VIDEOS */}
           {clase.videos ? (
@@ -177,7 +181,6 @@ const Modulo = ({ route, navigation }) => {
                     </TouchableOpacity>
                   );
                 })}
-
               </View>
             </View>
           ) : (

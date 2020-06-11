@@ -8,9 +8,16 @@ const Item = ({ type, title, detailCard, onPress }) => {
     const Reciclado = require("../../../assets/images/cursos/reciclado/reciclado.jpg");
     const Barbijo = require("../../../assets/images/cursos/barbijos/barbijos.jpg");
     const BloquesYAdoquines = require("../../../assets/images/cursos/bloquesyadoquines/bloquesyadoquines.jpg");
+    const Termotanque = require("../../../assets/images/cursos/termotanques/termotanque.jpeg");
+    const Peluqueria = require("../../../assets/images/cursos/peluqueria/peluqueria.jpg");
+    const EscuelaDeRugby = require("../../../assets/images/cursos/escueladerugby/escueladerugby.jpg");
+
     if (image === "barbijos") return Barbijo;
     if (image === "reciclado") return Reciclado;
     if (image === "bloquesyadoquines") return BloquesYAdoquines;
+    if (image === "termotanque") return Termotanque;
+    if (image === "peluqueria") return Peluqueria;
+    if (image === "escueladerugby") return EscuelaDeRugby;
   };
 
   return (

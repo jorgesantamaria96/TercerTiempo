@@ -5,7 +5,6 @@ const { width, height } = Dimensions.get("window");
 
 const Imagen = ({ route, navigation }) => {
   const { imagen } = route.params;
-  console.log(imagen);
 
   return (
     <View style={styles.container}>
@@ -38,6 +37,7 @@ const RenderImageClase = (image) => {
   const CicloPlastico = require("../../../../assets/images/cursos/reciclado/clases/cicloPlastico.jpg");
   const Contenedores = require("../../../../assets/images/cursos/reciclado/clases/contenedores.jpg");
   const Tabla = require("../../../../assets/images/cursos/reciclado/clases/tabla.jpg");
+  const EscuelaDeRugby = require("../../../../assets/images/cursos/escueladerugby/escueladerugby.jpg");
 
   if (image === "reciclado") return Reciclado;
   if (image === "arbolreciclado") return ArbolRecicldo;
@@ -45,6 +45,7 @@ const RenderImageClase = (image) => {
   if (image === "cicloPlastico") return CicloPlastico;
   if (image === "contenedores") return Contenedores;
   if (image === "table") return Tabla;
+  if (image === "escueladerugby") return EscuelaDeRugby;
 };
 
 export default Imagen;

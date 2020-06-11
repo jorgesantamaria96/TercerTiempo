@@ -849,7 +849,13 @@ export const CURSOS = [
           images: null,
           videos: ["https://www.youtube.com/watch?v=fVpbMIkk_cE"],
           pdf: null,
-          textClass: [],
+          textClass: null,
+        },
+        {
+          images: null,
+          videos: ["https://www.youtube.com/watch?v=fVpbMIkk_cE"],
+          pdf: null,
+          textClass: null,
         },
       ],
     ],
@@ -857,7 +863,7 @@ export const CURSOS = [
   {
     type: "bloquesyadoquines",
     id: 2,
-    title: "Fabricación de bloques y adoquines",
+    title: "Fabricación de Bloques y Adoquines",
     detailCard: "En este espacio encontraran un manual con contenidos técnicos referidos a la enseñanza...",
     presentation: [
       {
@@ -878,5 +884,308 @@ export const CURSOS = [
         },
       ],
     }]],
+  },
+  {
+    type: "termotanque",
+    id: 3,
+    title: "Armado de Termotanques Solares",
+    detailCard: "Este material se realizó a partir de la sistematización de la experiencia llevada a cabo en el taller...",
+    presentation: [
+      {
+        item: false,
+        text: "Este material se realizó a partir de la sistematización de la experiencia llevada a cabo en el taller de capacitación de termotanques solares realizado en Serrezuela, provincia de Córdoba. Organizado por el IPAF Región Pampeana y la Agencia de Extensión Rural Cruz del Eje del Instituto Nacional de Tecnología Agropecuaria (INTA), la Asociación Productores del Noroeste de Córdoba (APENOC), la Universidad Nacional General Sarmiento y el Instituto Nacional de Tecnología Industrial (INTI) - Cruz del Eje.  En esta cartilla presentaremos los principios de funcionamiento de un termotanque solar, sus componentes y el paso a paso para su construcción. También veremos las principales recomendaciones para su uso y mantenimiento. Es una guía para la construcción de un modelo de termotanque solar. Podemos reemplazar o reciclar materiales adaptando esta tecnología a nuestra zona, posibilidades y entorno.",
+      },
+    ],
+    image: "termotanque",
+    curso: [[{
+      images: null,
+      videos: null,
+      pdf: ["termotanquessolares"],
+      textClass: null,
+    }]]
+  },
+  {
+    type: "peluqueria",
+    id: 4,
+    title: "Peluquería",
+    detailCard: "En este espacio se orientará al alumno/a por medio de contenidos teóricos-prácticos para que adquiera las herramientas de un profesional en el salón de peluquería...",
+    presentation: [
+      {
+        item: false,
+        text: "En este espacio se orientará al alumno/a por medio de contenidos teóricos-prácticos para que adquiera las herramientas de un profesional en el salón de peluquería, en cuanto a vocación, destrezas, aptitudes y cualidades. Teniendo en cuenta tanto los conocimientos a nivel piel y cabello, características específicas del salón, máquinas y herramientas de trabajo, conducta del cliente en cuanto a necesidades del mismo para una mejor atención.",
+      },
+      {
+        item: false,
+        text: "¡Adelante!",
+      },
+    ],
+    image: "peluqueria",
+    curso: [
+      [
+        {
+          images: null,
+          videos: ["https://www.youtube.com/watch?v=PCkShvkJfU0", "https://www.youtube.com/watch?v=tvgHYIsZwR4"],
+          pdf: null,
+          textClass: [
+            {
+              item: false,
+              title: true,
+              text: "Corte de pelo degrades",
+            }
+          ],
+        },
+        {
+          images: null,
+          videos: ["https://www.youtube.com/watch?v=wsAmYX72ERM"],
+          pdf: null,
+          textClass: [
+            {
+              item: false,
+              title: true,
+              text: "La composición del cabello y las enfermedades del cuero cabelludo con sus prevenciones correspondientes.",
+            },
+            {
+              item: false,
+              title: false,
+              text: "COMPOSICIÓN DEL CABELLO:",
+            },
+            {
+              item: false,
+              title: false,
+              text: "El cabello es una prolongación de la piel que pertenece al sistema integumentario, que se compone de la piel, las uñas y el vello corporal. El cabello esta compuesto por: proteínas, lípidos, oligoelementos, agua, pigmentos y otra sustancias.",
+            },
+            {
+              item: false,
+              title: false,
+              text: "28% de proteínas",
+            },
+            {
+              item: false,
+              title: false,
+              text: "2% de lípidos",
+            },
+            {
+              item: false,
+              title: false,
+              text: "70% de agua, sales y otras sustancias (urea, aminoácidos, etc.)",
+            },
+            {
+              item: false,
+              title: false,
+              text: "PARTES DEL CABELLO:",
+            },
+            {
+              item: false,
+              title: false,
+              text: "Nace en el folículo capilar. Se proyecta en el bulbo piloso, que se incrusta en la raíz y es blando y también duro. En la base del folículo esta la papila en donde nace verdaderamente el cabello.",
+            },
+            {
+              item: false,
+              title: true,
+              text: "Las Proteínas:",
+            },
+            {
+              item: false,
+              title: false,
+              text: "Son aminoácidos unidos en cadena. La cantidad de proteínas que componen el pelo determinan la dureza y fortaleza del mismo. Las proteínas capilares son en su mayor parte queratina, y tienen un mayor contenido en azufre, que la queratina de la piel.",
+            },
+            {
+              item: false,
+              title: true,
+              text: "La Queratina:",
+            },
+            {
+              item: false,
+              title: false,
+              text: "La ruptura de la queratina se debe a la acción de bases fuertes (pH alto) y reductores, en esto se basa el proceso de cambio de forma permanente. Existen dos tipos de queratina en nuestro cuerpo: -la b-queratina, la cual es blanda y es un componente de la piel, y la a-queratina, la cual es dura y forma nuestras uñas y pelos.",
+            },
+            {
+              item: false,
+              title: false,
+              text: "Los aminoácidos principales son: Cisteína, Histidina, Metionina y Triptófano. Siendo la cisteína el aminoácido que mas abunda en la queratina.",
+            },
+            {
+              item: false,
+              title: true,
+              text: "ENFERMEDADES DEL CUERO CABELLUDO Y COMO PREVENIRLAS:",
+            },
+            {
+              item: false,
+              title: false,
+              text: "Dermatitis Seborreica:",
+            },
+            {
+              item: false,
+              title: false,
+              text: "Es una de las afecciones mas comunes. Se caracteriza por la inflamación, enrojecimiento y descamación de la piel provocado por la secreción sebácea y los microorganismos que viven en zonas de la dermis con mayor cantidad de glándulas sebáceas. No se conocen con exactitud las causas, pero existen determinados factores que ayudan a inducirla (agentes químicos, biológicos, físicos y hasta emocionales). Puede aparecer a cualquier edad en hombres y mujeres. Cuando la inflamación y enrojecimiento generan descamación excesiva, se la llama caspa.",
+            },
+            {
+              item: false,
+              text: false,
+              text: "Prevención:",
+            },
+            {
+              item: true,
+              title: false,
+              text: "Utilizar shampoo que contengan sulfuro de selenio, piritoina de zinc, acido salicílico o ketoconazol al 2%.",
+            },
+            {
+              item: true,
+              title: false,
+              text: "Frotar el cuero cabelludo durante 3 o 4 minutos antes de enjuagar.",
+            },
+            {
+              item: true,
+              title: false,
+              text: "No exponerse a ambiente con fuerte aire acondicionado o calefacción central",
+            },
+            {
+              item: true,
+              title: false,
+              text: "Llevar una conducta alimentaria equilibrada.",
+            },
+            {
+              item: true,
+              title: false,
+              text: "Masajear y cepillar diariamente el cuero cabelludo para mejorar la circulación.",
+            },
+            {
+              item: false,
+              title: true,
+              text: "Liquen Plano Capilar:",
+            },
+            {
+              item: false,
+              title: false,
+              text: "Es una subforma del liquen plano que afecta la zona del cuero cabelludo. De aparición poco frecuente, ataca directamente a los folículos pilosos. Al ser una patología de origen inflamatorio, los afectados muestran una inflamación folicular y por consiguiente una caída excesiva del cabello. Si bien esta enfermedad no hace diferencia de genero, afecta mas a las mujeres adultas.",
+            },
+            {
+              item: false,
+              title: false,
+              text: "Prevención:",
+            },
+            {
+              item: true,
+              title: false,
+              text: "Consultar a un profesional.",
+            },
+            {
+              item: true,
+              title: false,
+              text: "Si no se controla medicamente se puede llegar a producir una fibrosis perifolicular y la perdida de gran cantidad de folículos pilosos.",
+            },
+            {
+              item: true,
+              title: false,
+              text: "En caso de perder el pelo, se puede trasplantar cabellos en zonas calvas.",
+            },
+            {
+              item: false,
+              title: true,
+              text: "Alopecia:",
+            },
+            {
+              item: false,
+              title: false,
+              text: "Es la perdida anormal del cabello, por lo que el termino se considera un sinónimo de calvicie.   Puede afectar al cuero cabelludo o a otras zonas de la piel en la que existe pelo. Afecta principalmente a los hombre ya que esta provocad por hormonas masculinas o andrógenos sobre el folículo piloso, provocando su miniaturización progresiva.",
+            },
+            {
+              item: false,
+              title: false,
+              text: "Prevención:",
+            },
+            {
+              item: true,
+              title: false,
+              text: "Una buena dieta es indispensable para la buena salud, incorporando alimentos lo mas frescos posible, frutas y verduras.",
+            },
+            {
+              item: true,
+              title: false,
+              text: "Revisa tus estados emocionales, este se refleja sin duda en todo tu cuerpo, y las tensiones y preocupaciones pueden hacer que tu cuero cabelludo este tan tenso que acabe asfixiando el folículo piloso y este muera.",
+            },
+            {
+              item: false,
+              title: true,
+              text: "Psoriasis:",
+            },
+            {
+              item: false,
+              title: false,
+              text: "Se puede presentar a cualquier edad, sin distinción de genero. Es la formación de escamas en la piel producto de una excesiva reproducción de las células.",
+            },
+            {
+              item: false,
+              title: false,
+              text: "Prevención:",
+            },
+            {
+              item: true,
+              title: false,
+              text: "Cuidar la salud del cabellos para evitar su caída, inflamaciones e infecciones en la cabeza.",
+            },
+            {
+              item: true,
+              title: false,
+              text: "Sacar las escamas para luego poder aplicar el tratamiento indicado.",
+            },
+            {
+              item: true,
+              title: false,
+              text: "Una ves retiradas las escamas, se recomienda lavar el cabello con un shampoo con alquitrán y luego aplicar algún acondicionador.",
+            },
+          ],
+        }
+      ],
+    ],
+  },
+  {
+    type: "escueladerugby",
+    id: 5,
+    title: "Escuela de Rugby",
+    detailCard: "En este curso encontrarán material para aprender y tomar clases sobre el deporte mismo. Podrán ver videos didácticos...",
+    presentation: [
+      {
+        item: false,
+        text: "En este curso encontrarán material para aprender y tomar clases sobre el deporte mismo. Podrán ver videos didácticos, prácticos, ejercicios básicos, dirigidos a la iniciación del rugby que tendrán como objetivo aprender del deporte y a la vez algunos ejercicios físicos, además hablaremos sobre recomendaciones hacia la salud. Los videos dan explicaciones sobre el juego y sus fundamentos, ejercicios para realizar en sus casas (sin elementos), y recomendaciones sobre la alimentación e hidratación del participante.",
+      },
+    ],
+    image: "escueladerugby",
+    curso: [[
+      {
+        images: ["escueladerugby"],
+        videos: ["https://www.youtube.com/watch?v=Z1XVCm31Dio"],
+        pdf: null,
+        textClass: [
+          {
+            item: false,
+            title: true,
+            text: " Introducción al Rugby",
+          },
+          {
+            item: false,
+            title: false,
+            text: "En esta primera clase veremos, que es el rugby y cuál es su objetivo de juego. También charlaremos sobre la particularidad de su pelota, su cancha de juego, distintas versiones de rugby, cuánto dura un partido, y algunas reglas básicas importantes para poder jugar y ver un partido.",
+          },
+        ],
+      },
+      {
+        images: null,
+        videos: ["https://www.youtube.com/watch?v=tGQBRnZfldw"],
+        pdf: null,
+        textClass: [
+          {
+            item: false,
+            title: true,
+            text: "Division Forward y Backs",
+          },
+          {
+            item: false,
+            title: false,
+            text: "En esta clase veremos la conformación de un equipo, tanto seven’s y rugby 15. También veremos la división entre los Forwards y Backs. Con algunas características de los mismos grupos y jugadores.",
+          },
+        ],
+      },
+    ],],
   },
 ];
