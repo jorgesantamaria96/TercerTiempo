@@ -29,7 +29,6 @@ const Modulo = ({ route, navigation }) => {
     return () => backHandler.remove();
   }, []);
   const { clase, indice } = route.params;
-  console.log(clase);
 
   return (
     <View>

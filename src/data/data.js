@@ -1663,6 +1663,23 @@ export const CURSOS = [
             text: "En esta clase veremos, ejercicios para realizar, según nivel de cada participante. No solamente haremos los ejercicios, Sino que también mostraremos algunos ejercicios de movilidad articular y flexibilidad dinámica para poder entrar en calor.",
           },
         ],
+      },
+      {
+        images: null,
+        videos: ["https://www.youtube.com/watch?v=0ZugUpFJ2ZU"],
+        pdf: null,
+        textClass: [
+          {
+            item: false,
+            title: true,
+            text: "Recomendaciones Nutricionales e Hidratación",
+          },
+          {
+            item: false,
+            title: false,
+            text: "En esta clase charlaremos sobre algunas recomendaciones nutricionales. Veremos qué tipos de comida deberíamos comer más y cuanta cantidad según nuestro peso corporal. También veremos recomendaciones sobre la hidratación. Cuanta agua se debería tomar por día y sobre la rehidratación después de hacer alguna actividad física.",
+          },
+        ],
       }
     ],],
   },
