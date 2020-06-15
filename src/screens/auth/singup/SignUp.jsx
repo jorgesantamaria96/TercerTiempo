@@ -207,7 +207,7 @@ const SignUp = ({ route, navigation }) => {
         mail: state.mail,
       };
 
-      const response = await fetch(`${mobileTT}/algo`, {
+      const response = await fetch(`${mobileTT}/api/registro`, {
         method: "POST",
         headers: {
           Accept: "application/json",
