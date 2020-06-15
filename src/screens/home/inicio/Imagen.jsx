@@ -24,8 +24,8 @@ const styles = StyleSheet.create({
     alignItems: "center"
   },
   image: {
-      width: width,
-      height: width,
+      width: width * 1.2,
+      height: width * 2,
       transform: [{ rotate: '90deg' }],
   },
 });

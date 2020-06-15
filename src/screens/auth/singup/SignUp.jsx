@@ -217,6 +217,9 @@ const SignUp = ({ route, navigation }) => {
       });
 
       const responseJson = response.json();
+
+      console.log(responseJson);
+
       if ((responseJson.status = "200")) {
         dispatch({ type: "endLoading" });
         navigation.navigate("Wellcome", body );
