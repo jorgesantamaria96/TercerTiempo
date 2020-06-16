@@ -2,11 +2,9 @@ import React from "react";
 import {
   View,
   Text,
-  Button,
   StyleSheet,
   TouchableOpacity,
   ScrollView,
-  Image,
 } from "react-native";
 import { colors, version } from "../../../constants/constants";
 import { LinearGradient } from "expo-linear-gradient";
@@ -62,6 +60,39 @@ const Perfil = ({ route, navigation }) => {
             <Text style={styles.textDetail}>Mail: </Text>
             <Text style={styles.textData}>{params.mail}</Text>
           </View>
+        </View>
+        <View style={{ marginTop: 20 }}>
+          <TouchableOpacity
+            onPress={() => navigation.navigate("About", params)}
+          >
+            <LinearGradient
+              colors={[
+                colors.buttonLoginColor3,
+                colors.buttonLoginColor2,
+                colors.buttonLoginColor1,
+              ]}
+              style={{
+                paddingHorizontal: 5,
+                paddingVertical: 10,
+                borderRadius: 5,
+                shadowOpacity: 0.2,
+                shadowRadius: 8,
+                elevation: 2,
+              }}
+              start={{ x: 0, y: 0 }}
+              end={{ x: 1, y: 1 }}
+            >
+              <Text
+                style={{
+                  color: "#fff",
+                  textAlign: "center",
+                  fontWeight: "bold",
+                }}
+              >
+                Fundación
+              </Text>
+            </LinearGradient>
+          </TouchableOpacity>
         </View>
         <View style={{ marginTop: 20 }}>
           <TouchableOpacity onPress={() => navigation.navigate("Login")}>

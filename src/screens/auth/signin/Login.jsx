@@ -202,10 +202,9 @@ const Login = ({ navigation }) => {
       });
 
       const responseJson = await response.json();
-      console.log(responseJson);
       if (responseJson.status === "200") {
         if (responseJson.session.user.dni === parseInt(state.dni)) {
-          navigation.navigate("Main", {
+          navigation.navigate("Menu", {
             dni: responseJson.session.user.dni
               ? responseJson.session.user.dni
               : "--",

@@ -139,7 +139,7 @@ const Wellcome = ({ route, navigation }) => {
           <View style={{ flexDirection: "row", alignSelf: "center" }}></View>
         </View>
         <TouchableOpacity
-          onPress={() => navigation.navigate("Main", params )}
+          onPress={() => navigation.navigate("Menu", params )}
           style={{
             marginTop: 60,
             borderRadius: 50,

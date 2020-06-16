@@ -5,10 +5,11 @@ import FontAwesomeIcon from "react-native-vector-icons/FontAwesome";
 
 import RouteInicioComponent from "./RouteInicio";
 import RouteCursosComponent from "./RouteCursos";
-import Perfil from "../screens/home/perfil/Perfil";
+import RoutePerfilComponent from "./RoutePerfil";
 
 import { CURSOS } from "../data/data";
 import { colors } from "../constants/constants";
+import RoutePerilComponent from "./RoutePerfil";
 
 const TabApp = createBottomTabNavigator();
 
@@ -86,7 +87,7 @@ const Main = ({ route, navigation }) => {
       />
       <TabApp.Screen
         name="Perfil"
-        component={Perfil}
+        component={RoutePerilComponent}
         initialParams={userParams}
       />
     </TabApp.Navigator>
