@@ -30,6 +30,9 @@ export const colors = {
     tabIconColor: '#8890A6',
     textInputLabelColor: '#FD7E77',
     levelsBackground: '#F5F6FC',
+    social1: "#ccffc1",
+    social2: "#37ff0d",
+    social3: "#29ee00",
 }
 
 export { width, height };
