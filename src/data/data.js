@@ -1948,6 +1948,163 @@ export const CURSOS = [
               text: "Sostener las herramientas de tal manera que no tengamos que levantar los brazos.",
             },
           ],
+        },
+        {
+          images: null,
+          videos: null,
+          pdf: null,
+          textClass: [
+            {
+              item: false,
+              title: true,
+              text: "INTRODUCCION AL PLANCHADO. TIPOS DE PLANCHAS.",
+            },
+            {
+              item: false,
+              title: false,
+              text: "Plancha profesional de cerámica: sin limite de tiempo para su uso y con una oscilación de temperatura casi imperceptible, lo cual permite un planchado mas parejo.",
+            },
+            {
+              item: false,
+              title: false,
+              text: "Tecnología iónica: el efecto frizz es generado por los iones positivos (+)que tiene el cabello naturalmente. Las planchas laser Ion generan una alta emisión de iones negativos (I-) que combaten la parte positiva que tiene el cabello, produciendo así un efecto Anti-Frizz y un alisado mas duradero.",
+            },
+            {
+              item: false,
+              title: false,
+              text: "Planchas con cristales de turmalina: los patines recubiertos con turmalina tienen la capacidad de emitir calor infrarrojo lejano, cuidando el cabello al máximo. El calor infrarrojo lejano es mas gentil que el convencional por que penetra directamente en el centro del cabello, protegiendo la fibra capilar externa que es la mas sensible al shock calórico.",
+            },
+            {
+              item: false,
+              title: false,
+              text: "Planchas digitales: la regulación de temperatura hace que la plancha sirva para cualquier tipo de cabello (grueso o fino, obediente o rebelde, liso o crespo, etc). Permite también llegar a temperaturas requeridas para tratamientos permanentes como alisado progresivo.",
+            },
+            {
+              item: false,
+              title: false,
+              text: "Sistema de calentamiento rápido: las mejores planchas profesionales tienen un calentamiento casi instantáneo (en menos de 10 segundos llegan a su temperatura ideal). Ver imagen en video tutorial.",
+            },
+            {
+              item: false,
+              title: true,
+              text: "MANIPULACION DE UN CABELLO PARA BRUSHING Y PLANCHADO.",
+            },
+            {
+              item: false,
+              title: false,
+              text: "Lava tu cabello con un shampoo que te de volumen y luego aplica acondicionador para protegerlo.",
+            },
+            {
+              item: false,
+              title: false,
+              text: "Enreda tu cabello con una toalla para que absorba toda la humedad y déjala por 15 minutos, debe quedar un poco húmedo. Luego, aplica un protector de calor.",
+            },
+            {
+              item: false,
+              title: false,
+              text: "Para peinarlo, si tienes el pelo corto y con capas, usa los dedos y pásalos por tu cabello desde la raíz hasta las puntas. Si tu cabellos llega a los hombros o mas, usa un cepillo grande y redondo.",
+            },
+            {
+              item: false,
+              title: false,
+              text: "Divide tu cabello en secciones con ayuda de pinzas grandes; luego toma una sección pequeña por l parte de abajo y usa el cepillo para levantar tu cabello desde la raíz y deslízalo a lo largo del mismo hacia afuera. Cuando hayas terminado cada sección, dale un golpe de aire fresco (con el secador) para sellar las cutículas.",
+            },
+            {
+              item: false,
+              title: false,
+              text: "Cuando tu cabello tenga las ondas que deseas, aplica un poco de serum ligero en medios y puntas, le dará brillo. También puedes usar un poco de spray fijador para mantener en alto tu cabello.",
+            },
+            {
+              item: false,
+              title: false,
+              text: "Con la practica tendrás mejores resultados, pero si lo haces en exceso dañara tu cabello. Por eso es importante que uses productos protectores.",
+            },
+            {
+              item: false,
+              title: false,
+              text: "Nuestro truco: es importante preparar el cabellos para el brushing. Para ello, utiliza un shampoo y cuidados nutritivos así aumenta la resistencia de la fibra. Una vez el pelo lavado y escurrido añade crema alisadora que facilitara el brushing y protegerá el pelo del calor del secador.",
+            },
+            {
+              item: false,
+              title: true,
+              text: "UTILIZACION DE CEPILLOS Y PINZAS.",
+            },
+            {
+              item: false,
+              title: false,
+              text: "Existe una gran variedad de cepillos y cada uno satisface mejor las necesidades de cada tipo de cabello. Ya sea para peinado diario o para desenredar, estilizar, enchinar o alaciar. Ver en video distintos tipos de cepillos.",
+            },
+            {
+              item: true,
+              title: false,
+              text: "Cepillo acolchado: es el típico que tiene sus cerdas incrustadas en un colchón, es bueno para todo tipo de cabello y para usarlo en seco o mojado. Sus cerdas son de plástico y sus puntas redondeadas tienen la función de dar un delicioso masaje a tu cuero cabelludo con el fin de mejorar su microcirculación y esparcir sus aceites naturales por todo tu cabello.",
+            },
+            {
+              item: true,
+              title: false,
+              text: "Cepillo plano o de paleta: es una variación del anterior y por su forma es excelente para desenredar las puntas y secarlas con la pistola secadora, pues al ser muy amplio tomar un buen mechón de cabello para mantenerlo ahí mientras lo secas pegando la secadora al cepillo. Pueden tener forma ovalada o cuadrada. Sus cerdas y estructura son de plástico por lo que tienen la desventaja de producir electricidad estática llevando a la aparición del frizz.",
+            },
+            {
+              item: true,
+              title: false,
+              text: "Cepillo cilíndrico: es otra excelente opción para secar tu cabello con la secadora, independientemente del largo que tenga. Es muy bueno para alisar el cabello o también cuando necesitas un peinado con las puntas hacia afuera o hacia adentro.",
+            },
+            {
+              item: false,
+              title: true,
+              text: "PEINE DE PLASTICO",
+            },
+            {
+              item: false,
+              title: false,
+              text: "Excelente para peinar el cabello cuando esta aun mojado sin temor a romperlo, los de cerdas juntas son buenos para desenredarlo y los de cerdas separadas son geniales para dar volumen.  Ver imagen en video. ",
+            },
+            {
+              item: false,
+              title: false,
+              text: "Peine púa: su función principal es separar mechones, entresacar y marcar. Podemos encontrarlos de diferentes tamaños y grosor en las púas dependiendo del uso del mismo. Normalmente los de púas finas suelen ser para cabellos finos y suaves, y los de púas gruesas para cabellos con mas volumen. Ver imagen en video.",
+            },
+            {
+              item: false,
+              title: false,
+              text: "Peine de corte: como su nombre indica se suele utilizar para cortes de cabello. Tienen las púas bastante juntas y a  la vez que sujetan el trozo de pelo a cortar nos ayudan a desenredar poco pelo. Ver imagen en video.",
+            },
+            {
+              item: false,
+              title: false,
+              tetx: "Peine tenedor: se usan para retoques del cabello. Se suelen utilizar mucho en pelos rizados. Ver imagen en video.",
+            },
+            {
+              item: false,
+              title: true,
+              text: "RIZADORAS O TENAZAS PARA EL PELO",
+            },
+            {
+              item: false,
+              title: false,
+              text: "Al igual que las planchas hay una infinidad de modelos y variedades de rizadoras. La siguiente clasificación es de los modelos que podemos encontrar en supermercados o tiendas. El material es el mismo con el que hacen las planchas, lo mas importante y que determinar el look final es el diámetro de la rizadora.",
+            },
+            {
+              item: false,
+              title: false,
+              text: "Rizadora de ½ pulgadas:",
+            },
+            {
+              item: false,
+              title: false,
+              text: "Generan rulos super marcados y delgados. Son ideales para cabellos cortos y quieren un acabado en espiral.",
+            },
+            {
+              item: false,
+              title: false,
+              text: "Tenazas de 1 pulgada:",
+            },
+            {
+              item: false,
+              title: false,
+              text: "Son las mas versátiles, y funciona tanto para pelo largo como para pelo corto. Permite hacer desde ondas espiraladas hasta un poco mas ondeadas.",
+            },
+          ],
         }
       ],
     ],
