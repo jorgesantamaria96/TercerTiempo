@@ -7,6 +7,7 @@ import {
   ScrollView,
   TouchableOpacity,
   Text,
+  Image,
 } from "react-native";
 import { colors } from "../../../constants/constants";
 import Icon from "react-native-vector-icons/FontAwesome";
@@ -59,7 +60,22 @@ const Menu = ({ route, navigation }) => {
           style={styles.box}
           onPress={() => navigation.navigate("About", params)}
         >
-          <Icon name="trophy" size={100} style={styles.icon} />
+          {/* <Icon name="trophy" size={100} style={styles.icon} /> */}
+          <View
+            style={{
+              justifyContent: "center",
+              alignItems: "center",
+              padding: 20,
+            }}
+          >
+            <Image
+              source={require("../../../../assets/images/iconott.png")}
+              style={{
+                width: 100,
+                height: 100,
+              }}
+            />
+          </View>
           <View style={styles.container}>
             <Text style={styles.text}>Fundación</Text>
           </View>

@@ -357,7 +357,7 @@ export const CURSOS = [
       ],
       [
         {
-          images: ["reciclado"],
+          images: null,
           videos: ["https://www.youtube.com/watch?v=YiHTNfKJwAw"],
           pdf: null,
           textClass: [
@@ -2123,7 +2123,7 @@ export const CURSOS = [
     image: "escueladerugby",
     curso: [[
       {
-        images: ["escueladerugby"],
+        images: null,
         videos: ["https://www.youtube.com/watch?v=Z1XVCm31Dio"],
         pdf: null,
         textClass: [

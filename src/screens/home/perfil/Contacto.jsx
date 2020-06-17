@@ -7,6 +7,7 @@ import {
   Text,
   TouchableOpacity,
   Linking,
+  Image,
 } from "react-native";
 import Material from "react-native-vector-icons/FontAwesome";
 import { colors } from "../../../constants/constants";
@@ -30,6 +31,7 @@ const Contacto = ({ route, navigation }) => {
   const twitter = "https://twitter.com/tercertiempoFun?s=09";
   const instagram =
     "https://www.instagram.com/fundaciontercertiempo/?igshid=1x6sros7s8vwt";
+  const donacion = "http://fundaciontercertiempo.org/";
 
   return (
     <ScrollView>
@@ -46,6 +48,7 @@ const Contacto = ({ route, navigation }) => {
           </Text>
         </View>
 
+        {/* REDES SOCIALES */}
         <View style={{ flexDirection: "row", alignSelf: "center" }}>
           <TouchableOpacity
             style={[
@@ -102,11 +105,20 @@ const Contacto = ({ route, navigation }) => {
               styles.box,
               { backgroundColor: "red", alignItems: "center" },
             ]}
-            onPress={() => {}}
+            onPress={() => {
+              try {
+                Linking.openURL(donacion);
+              } catch (err) {
+                console.log(err);
+              }
+            }}
           >
             <Material name="dollar" size={14} size={60} color="white" />
             <Text style={styles.text}>Donaciones</Text>
           </TouchableOpacity>
+        </View>
+        <View style={styles.imageContainer}>
+          <Image source={require("../../../../assets/images/icono.png")} style={{ width: 200, height: 148 }} />
         </View>
       </View>
     </ScrollView>
@@ -132,6 +144,10 @@ const styles = StyleSheet.create({
   text: {
     textAlign: "center",
     color: "white",
+  },
+  imageContainer: {
+    padding: 10,
+    alignItems: "center"
   },
 });
 
