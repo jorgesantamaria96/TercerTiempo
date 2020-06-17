@@ -51,7 +51,7 @@ const AboutUs = ({ route, navigation }) => {
               );
             }
             return (
-              <View style={styles.titleTextContainer}>
+              <View style={styles.titleTextContainer} key={index}>
                 <Text style={styles.titleText}>{item.t}</Text>
               </View>
             );
@@ -61,7 +61,7 @@ const AboutUs = ({ route, navigation }) => {
         {/* IMÁGENES */}
         <Text
           style={{
-            alignSelf: "flex-start",
+            alignSelf: "center",
             paddingVertical: 5,
             color: colors.colorPhysicalButton,
           }}
@@ -71,11 +71,12 @@ const AboutUs = ({ route, navigation }) => {
         <View style={styles.imageContainer}>
           {params.data[0].imagenes.map((item, index) => {
             return (
-              <Image
-                source={renderImage(item)}
-                style={{ width: "100%", height: 200, marginVertical: 10 }}
-                key={index}
-              />
+              <View key={index}>
+                <Image
+                  source={renderImage(item)}
+                  style={{ width: "100%", height: 200, marginVertical: 10 }}
+                />
+              </View>
             );
           })}
         </View>

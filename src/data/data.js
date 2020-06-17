@@ -1579,6 +1579,375 @@ export const CURSOS = [
               text: "Nunca dejare de sonreír. Es gratis y siempre regalare una sonrisa sincera a mi cliente.",
             },
           ],
+        },
+        {
+          images: null,
+          videos: ["https://www.youtube.com/watch?v=QgbMDGUJKjw"],
+          pdf: null,
+          textClass: [
+            {
+              item: false,
+              title: true,
+              text: "INTRODUCCION AL CORTE, DISTINTAS CLASES DE TIJERAS, DISTINTOS TIPOS DE ROSTROS",
+            },
+            {
+              item: false,
+              title: false,
+              text: "Clases de tijeras:",
+            },
+            {
+              item: false,
+              title: false,
+              text: "Es fundamental tener buenas herramientas para realizar un buen corte de cabello, por supuesto vamos a tener en cuenta la calidad de las mismas que vamos a utilizar y es necesario saber que existen diferentes tipos de calidad de las respectivas herramientas de trabajo, en este caso las tijeras de corte para el cabello. Tengamos en cuenta que el precio  de las tijeras, generalmente cuanto mas cara es son, mejor calidad vamos a tener.",
+            },
+            {
+              item: true,
+              title: false,
+              text: "Tijera filo dulce.",
+            },
+            {
+              item: true,
+              title: false,
+              text: "Tijera de colbato.",
+            },
+            {
+              item: true,
+              title: false,
+              text: "Tijera filo navaja.",
+            },
+            {
+              item: true,
+              title: false,
+              text: "Tijera micro dentada.",
+            },
+            {
+              item: true,
+              title: false,
+              text: "Tijera de entresacar o pulir.",
+            },
+            {
+              item: false,
+              title: false,
+              text: "Los distintos modelos se muestran en el video correspondiente a la clase.",
+            },
+            {
+              item: false,
+              title: true,
+              text: "LO QUE DEBEMOS SABER ANTES DE INICIAR UN CORTE:",
+            },
+            {
+              item: false,
+              title: false,
+              text: "Conoce la forma del rostro.",
+            },
+            {
+              item: false,
+              title: false,
+              text: "Antes de todo hay que averiguar que tipo de rostro tiene el cliente, si es de forma ovalada, cuadrada, redonda o en forma de corazón. Según sea su rostro, se podrá descubrir cual es el corte de pelo que le favorecerá mas.",
+            },
+            {
+              item: false,
+              title: false,
+              text: "En el video correspondiente a la clase se verán imágenes de distintos tipos de rostros.",
+            },
+            {
+              item: false,
+              title: true,
+              text: "Cual es la textura de cabello",
+            },
+            {
+              item: false,
+              title: false,
+              text: "La textura de su cabello es la medida de su circunferencia. Los cabellos gruesos tienen circunferencia mas grande y los finos mas pequeñas. Una textura media indica un tamaño mediano, lo que se considera normal y no conlleva ningún problema particular respecto al cuidado del cabello o los tratamientos químicos. El cabello grueso es mas fuerte, por diversas razones, a la vez que tiene mas sustancia. Sin embargo el cabello grueso también puede ser mas difícil de mantener y puede rechazar las coloraciones, permanentes y alisados. El cabello fino por el contrario, es mas fácil de manejar, por eso hace que sea mas frágil y vulnerable a los daños causados por los tratamientos químicos.",
+            },
+          ],
+        },
+        {
+          images: null,
+          videos: ["https://www.youtube.com/watch?v=pJp-Vr0AZuI"],
+          pdf: null,
+          textClass: [
+            {
+              item: false,
+              title: true,
+              text: "POSTURAS DEL PELUQUERO. RECOMENDACIONES ERGONOMICAS PARA PROFESIONALES DE PELUQUERIA",
+            },
+            {
+              item: false,
+              title: false,
+              text: "En tu trabajo como profesional de la peluquería, pasaras muchas horas de pie, inclinándote, estirándote y repitiendo los mismos movimientos. Todas las actividades repetitivas pueden causar cansancio y dolor en diversas partes del cuerpo, y a veces, pueden incluso causar una lesión grave. Alguna de las molestias, dolores y lesiones se desarrollan lentamente durante un largo periodo. En muchos casos, los problemas de salud se podrían haber prevenido con una mejor postura, mejores hábitos de trabajo y un equipo adecuado.",
+            },
+            {
+              item: false,
+              title: false,
+              text: "Una ciencia denominada “ergonomía” se encarga de estudiar como hacemos nuestro trabajo, que movimientos corporales, posiciones, herramientas y equipos deberíamos usar y el efecto que todas esas cosas tienen en nuestra salud y bienestar, y las de nuestro/a cliente.",
+            },
+            {
+              item: false,
+              title: false,
+              text: "Debemos estar al tanto de las recomendaciones para prevenir problemas en las manos, las muñecas, los hombros, el cuello, cervicales, la espalda, los pies y las piernas. Si desde un principio desarrollamos los concejos que nos dan y los volvemos hábitos diarios, empezaremos en la dirección correcta, los malos vicios adquiridos con el tiempo cuestan mucho después de eliminar.",
+            },
+            {
+              item: false,
+              title: true,
+              text: "Cuello y espalda:",
+            },
+            {
+              item: false,
+              title: false,
+              text: "La columna vertebral se extiende desde la parte superior del cuello hasta la parte inferior de la espalda. Esta formada por muchos huesos denominados vertebras, que se encuentran uno debajo del otro. Entre cada par de vertebras hay articulaciones y discos  que  les proporcionan al cuello y a la espalda flexibilibildad para moverse.",
+            },
+            {
+              item: false,
+              title: false,
+              text: "Los discos son flexibles por que tienen una sustancia gelatinosa en su interior. Tanto las articulaciones como los discos pueden lastimarse si están tensos o si se les comprime. Mantener el cuello inclinado o torcido durante un periodo prolongado puede provocarte dolor en el cuello, la espalda, los brazos o las piernas, especialmente si un disco se rompe.",
+            },
+            {
+              item: false,
+              title: false,
+              text: "Recomendaciones para prevenir problemas de cuello y espalda:",
+            },
+            {
+              item: true,
+              title: false,
+              text: "Mantener la espalda derecha mientras se trabaja. Flexionarte por la cadera, en vez de por la cintura (con espalda recta)",
+            },
+            {
+              item: true,
+              title: false,
+              text: "Usar un lava cabeza que permita ubicarte detrás de tu cliente para lavarle la cabeza sin tener que girar.",
+            },
+            {
+              item: true,
+              title: false,
+              text: "Ajustar la altura de la silla de tu cliente.",
+            },
+            {
+              item: true,
+              title: false,
+              text: "Inclinar la cabeza de tu cliente en una posición que te resulte cómoda.",
+            },
+            {
+              item: true,
+              title: false,
+              text: "Trabajar con el cliente de pie si tiene el cabello muy largo o sentada en un taburete.",
+            },
+            {
+              item: true,
+              title: false,
+              text: "Evitar zapatos de tacones altos.",
+            },
+            {
+              item: true,
+              title: false,
+              text: "Cuando permanezcas de pie durante prolongados periodos de tiempo, colocar de vez en cuando un pie sobre taburete o barra debajo de la silla de tu cliente (si la hubiese)",
+            },
+            {
+              item: false,
+              title: true,
+              text: "Pies y piernas:",
+            },
+            {
+              item: false,
+              title: false,
+              text: "S permaneces de parado durante un prolongado periodo de tiempo, los pies y los tobillos pueden hincharse, y tienes mayor riesgo de padecer de venas varicosas. Además, si cualquier parte del pie se encuentra bajo presión, se crearan callos, durezas o irritación de la piel, en el punto de presión.",
+            },
+            {
+              item: false,
+              title: false,
+              text: "Las recomendaciones para prevenir problemas de pie y piernas:",
+            },
+            {
+              item: true,
+              title: false,
+              text: "No permanecer de pie durante prolongados periodos sin sentarse.",
+            },
+            {
+              item: true,
+              title: false,
+              text: "Cambiar la posición frecuentemente. Usar taburete o asiento movible.",
+            },
+            {
+              item: true,
+              title: false,
+              text: "Elevar los pies cuando tomes un descanso.",
+            },
+            {
+              item: true,
+              title: false,
+              text: "Usar zapatos cómodos con suela de goma, que te sujete bien los pies.",
+            },
+            {
+              item: true,
+              title: false,
+              text: "Usar felpudo mullido para reducir la fatiga que produce al estar de pie sobre una superficie dura todo el día.",
+            },
+            {
+              item: true,
+              title: false,
+              text: "Usar medias especiales para evitar la inflamación de las piernas (cremas frías, masajes, baños de agua fría al llegar a casa)",
+            },
+            {
+              item: false,
+              title: true,
+              text: "Manos y muñecas:",
+            },
+            {
+              item: false,
+              title: false,
+              text: "La mayoría de los músculos que mueven a la mano y los dedos, están en realidad en tu ante brazo. Estos músculos están unidos a la mano y dedos por tendones, que son como cuerda que pasan a través de la muñeca. Cuando estos  tendones se inflamas se produce la tendinitis.",
+            },
+            {
+              item: false,
+              title: false,
+              text: "El túnel carpiano esta situado en la muñeca, rodeado por huesos y tejido. Un nervio y varios tendones pasan a través de este túnel. Si tienes tendinitis, los tendones se hinchan y el nervio que se encuentra en el túnel queda oprimido. Esta condición, llamada síndrome del túnel carpiano puede hacer que la mano presente entumecimiento y debilidad.",
+            },
+            {
+              item: false,
+              title: false,
+              text: "Las principales causas para padecer STC, son:",
+            },
+            {
+              item: true,
+              title: false,
+              text: "Doblar mucho la muñeca.",
+            },
+            {
+              item: true,
+              title: false,
+              text: "Apretar o agarrar demasiado fuerte.",
+            },
+            {
+              item: true,
+              title: false,
+              text: "Repetir un movimiento una y otra ves.",
+            },
+            {
+              item: false,
+              title: false,
+              text: "Esto ocurre cuando:",
+            },
+            {
+              item: true,
+              title: false,
+              text: "Cortamos el cabello, sostenemos el secador o estamos usando un cepillo redondo, rulos o plancha.",
+            },
+            {
+              item: true,
+              title: false,
+              text: "Cortamos con tijeras que no se adaptan a nuestras manos.",
+            },
+            {
+              item: true,
+              title: false,
+              text: "Cortamos con tijeras que no están debidamente lubricadas o no cortan bien.",
+            },
+            {
+              item: true,
+              title: false,
+              text: "Rizamos el cabello con la plancha varias veces.",
+            },
+            {
+              item: true,
+              title: false,
+              text: "Usamos un peine que no se desliza fácilmente.",
+            },
+            {
+              item: false,
+              title: false,
+              text: "Las recomendaciones para prevenir estos problemas son:",
+            },
+            {
+              item: true,
+              title: false,
+              text: "Ajustar la altura de la silla. Bajarla para trabajar coronilla y elevarla para trabajar debajo del nivel de la oreja, para evitar doblar la muñeca.",
+            },
+            {
+              item: true,
+              title: false,
+              text: "Girar la silla para que no tengas que estirarte por encima o por delante del cliente.",
+            },
+            {
+              item: true,
+              title: false,
+              text: "Inclinar la cabeza del cliente para evitar doblar mucho el brazo, la mano y la muñeca.",
+            },
+            {
+              item: true,
+              title: false,
+              text: "Usar tijeras afiladas que se adapten a tu mano.",
+            },
+            {
+              item: true,
+              title: false,
+              text: "Girar el mango de cepillo redondo con los dedos pulgar e índice, en ves de doblar continuamente la muñeca.",
+            },
+            {
+              item: true,
+              title: false,
+              text: "Usar técnicas de cortes que te ayuden a mantener las muñecas rectas.",
+            },
+            {
+              item: false,
+              title: true,
+              text: "Hombros:",
+            },
+            {
+              item: false,
+              title: false,
+              text: "Nuestros hombros tienen músculos y tendones. También tienen una bolsa sinovial que es un saco lleno de liquido. Si sufrimos contracturas en los hombros, podemos tener dolor muscular, tendinitis o bursitis. Es muy fácil padecer algo de esto si mantenemos los hombros a menudo  alejados del cuerpo y muy estirados o si los elevamos llevando el codo por encima de la altura del hombro.",
+            },
+            {
+              item: false,
+              title: false,
+              text: "Se sufren contracturas en los hombros cuando:",
+            },
+            {
+              item: true,
+              title: false,
+              text: "Nos estiramos para cortar, secar o rizar la coronilla de la cabeza.",
+            },
+            {
+              item: true,
+              title: false,
+              text: "Nos estiramos por delante del cuerpo de nuestro cliente para lavar o secar.",
+            },
+            {
+              item: true,
+              title: false,
+              text: "Nos estiramos para tomar tijeras y los peines del tocador.",
+            },
+            {
+              item: true,
+              title: false,
+              text: "Nos estiramos para alcanzar productos o útiles de un estante alto.",
+            },
+            {
+              item: true,
+              title: false,
+              text: "Sostenemos maquinillas pesadas, especialmente si nuestro brazo esta estirado o levantado.",
+            },
+            {
+              item: false,
+              title: false,
+              text: "Las recomendaciones para prevenir problemas de hombro:",
+            },
+            {
+              item: true,
+              title: false,
+              text: "Ajustar la altura de la silla cuando trabajemos en un cliente, así nuestros brazos estarán cerca de los laterales.",
+            },
+            {
+              item: true,
+              title: false,
+              text: "Girar la silla y acercarnos a nuestro cliente lo mas que podamos.",
+            },
+            {
+              item: true,
+              title: false,
+              text: "Sostener las herramientas de tal manera que no tengamos que levantar los brazos.",
+            },
+          ],
         }
       ],
     ],
