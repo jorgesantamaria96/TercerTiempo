@@ -28,7 +28,8 @@ const Contacto = ({ route, navigation }) => {
 
   const facebook = "https://www.facebook.com/fundaciontercertiemporugby/";
   const twitter = "https://twitter.com/tercertiempoFun?s=09";
-  const instagram = "https://www.instagram.com/fundaciontercertiempo/?igshid=1x6sros7s8vwt";
+  const instagram =
+    "https://www.instagram.com/fundaciontercertiempo/?igshid=1x6sros7s8vwt";
 
   return (
     <ScrollView>
@@ -101,13 +102,7 @@ const Contacto = ({ route, navigation }) => {
               styles.box,
               { backgroundColor: "red", alignItems: "center" },
             ]}
-            onPress={() => {
-              try {
-                Linking.openURL(link);
-              } catch (err) {
-                console.log(err);
-              }
-            }}
+            onPress={() => {}}
           >
             <Material name="dollar" size={14} size={60} color="white" />
             <Text style={styles.text}>Donaciones</Text>

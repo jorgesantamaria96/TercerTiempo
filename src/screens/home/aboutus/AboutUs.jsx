@@ -59,7 +59,15 @@ const AboutUs = ({ route, navigation }) => {
         </View>
 
         {/* IMÁGENES */}
-        <Text style={{ alignSelf: "flex-start", paddingVertical: 5, color: colors.nextInf }}>Algunas imágenes que nos representan!</Text>
+        <Text
+          style={{
+            alignSelf: "flex-start",
+            paddingVertical: 5,
+            color: colors.colorPhysicalButton,
+          }}
+        >
+          Algunas imágenes que nos representan!
+        </Text>
         <View style={styles.imageContainer}>
           {params.data[0].imagenes.map((item, index) => {
             return (
@@ -142,8 +150,8 @@ const styles = StyleSheet.create({
   titleText: {
     color: colors.ttred,
     fontWeight: "bold",
-    fontSize: 18
-  }
+    fontSize: 18,
+  },
 });
 
 export default AboutUs;
