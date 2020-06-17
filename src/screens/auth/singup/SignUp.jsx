@@ -207,7 +207,7 @@ const SignUp = ({ route, navigation }) => {
         mail: state.mail,
       };
 
-      const response = await fetch(`${mobileTT}/api/registro`, {
+      const response = await fetch("http://134.122.118.141/users/agregar", {
         method: "POST",
         headers: {
           Accept: "application/json",
