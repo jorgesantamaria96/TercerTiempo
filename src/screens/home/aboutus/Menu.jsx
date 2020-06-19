@@ -8,10 +8,11 @@ import {
   TouchableOpacity,
   Text,
   Image,
+  Linking,
 } from "react-native";
 import { colors } from "../../../constants/constants";
-import Icon from "react-native-vector-icons/FontAwesome";
-import Material from "react-native-vector-icons/MaterialCommunityIcons";
+import Material from "react-native-vector-icons/FontAwesome";
+import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 
 const Menu = ({ route, navigation }) => {
   useEffect(() => {
@@ -49,6 +50,12 @@ const Menu = ({ route, navigation }) => {
     mail: mail,
   };
 
+  const facebook = "https://www.facebook.com/fundaciontercertiemporugby/";
+  const twitter = "https://twitter.com/tercertiempoFun?s=09";
+  const instagram =
+    "https://www.instagram.com/fundaciontercertiempo/?igshid=1x6sros7s8vwt";
+  const donacion = "http://fundaciontercertiempo.org/";
+
   return (
     <ScrollView>
       <View style={styles.screen}>
@@ -84,11 +91,75 @@ const Menu = ({ route, navigation }) => {
           style={styles.box}
           onPress={() => navigation.navigate("Main", params)}
         >
-          <Material name="rugby" size={100} style={styles.icon} />
+          <MaterialCommunityIcons name="rugby" size={100} style={styles.icon} />
           <View style={styles.container}>
             <Text style={styles.text}>Capacitación</Text>
           </View>
         </TouchableOpacity>
+        
+        {/* REDES SOCIALES */}
+        <View style={{ flexDirection: "row", alignSelf: "center" }}>
+          <TouchableOpacity
+            style={[
+              styles.boxRS,
+              { backgroundColor: colors.background, alignItems: "center" },
+            ]}
+            onPress={() => {
+              try {
+                Linking.openURL(instagram);
+              } catch (err) {
+                console.log(err);
+              }
+            }}
+          >
+            <Material name="instagram" size={40} color={colors.ttblue} />
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={[
+              styles.boxRS,
+              { backgroundColor: colors.background, alignItems: "center" },
+            ]}
+            onPress={() => {
+              try {
+                Linking.openURL(twitter);
+              } catch (err) {
+                console.log(err);
+              }
+            }}
+          >
+            <Material name="twitter" size={40} color={colors.ttblue} />
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={[
+              styles.boxRS,
+              { backgroundColor: colors.background, alignItems: "center" },
+            ]}
+            onPress={() => {
+              try {
+                Linking.openURL(facebook);
+              } catch (err) {
+                console.log(err);
+              }
+            }}
+          >
+            <Material name="facebook-official" size={40} color={colors.ttblue} />
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={[
+              styles.boxRS,
+              { backgroundColor: colors.background, alignItems: "center" },
+            ]}
+            onPress={() => {
+              try {
+                Linking.openURL(donacion);
+              } catch (err) {
+                console.log(err);
+              }
+            }}
+          >
+            <Material name="dollar" size={40} color={colors.ttblue} />
+          </TouchableOpacity>
+        </View>
       </View>
     </ScrollView>
   );
@@ -108,10 +179,9 @@ const styles = StyleSheet.create({
   },
   box: {
     borderWidth: 1,
-    paddingTop: 10,
     alignItems: "center",
     width: "100%",
-    height: 220,
+    height: 190,
     marginVertical: 10,
     borderRadius: 10,
     borderWidth: 0.01,
@@ -140,6 +210,16 @@ const styles = StyleSheet.create({
     alignItems: "center",
     padding: 20,
     color: colors.ttred,
+  },
+  boxRS: {
+    alignSelf: "center",
+    borderWidth: 1,
+    width: "25%",
+    padding: 5,
+    margin: 5,
+    borderRadius: 20,
+    elevation: 4,
+    paddingVertical: 10,
   },
 });
 

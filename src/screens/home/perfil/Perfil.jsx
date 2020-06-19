@@ -94,7 +94,7 @@ const Perfil = ({ route, navigation }) => {
             </LinearGradient>
           </TouchableOpacity>
         </View>
-        <View style={{ marginTop: 20 }}>
+        {/* <View style={{ marginTop: 20 }}>
           <TouchableOpacity onPress={() => navigation.navigate("Contacto")}>
             <LinearGradient
               colors={[colors.social1, colors.social2, colors.social3]}
@@ -120,7 +120,7 @@ const Perfil = ({ route, navigation }) => {
               </Text>
             </LinearGradient>
           </TouchableOpacity>
-        </View>
+        </View> */}
         <View style={{ marginTop: 20 }}>
           <TouchableOpacity onPress={() => navigation.navigate("Login")}>
             <LinearGradient
