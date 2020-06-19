@@ -4,6 +4,7 @@ import PDFReader from "rn-pdf-reader-js";
 
 const PdfView = ({ route, navigation }) => {
   const { pdf } = route.params;
+  console.log(pdf)
 
   function renderPdf(pdf) {
     const BloquesYAdoquines = "http://134.122.118.141/manual_fabricacion_bloques_adoquines.PDF";
@@ -12,7 +13,6 @@ const PdfView = ({ route, navigation }) => {
     if (pdf === "termotanque") return Termotanque;
     if (pdf === "bloquesyadoquines") return BloquesYAdoquines;
   };
-  const source = "";
   
   return <PDFReader source={{ uri: renderPdf(pdf) }} useGoogleReader={true}  />;
 };
