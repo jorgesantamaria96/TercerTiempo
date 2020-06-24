@@ -207,7 +207,7 @@ const SignUp = ({ route, navigation }) => {
         mail: state.mail,
       };
 
-      const response = await fetch("http://134.122.118.141/users/agregar", {
+      const response = await fetch("https://superpago.com.ar/mobile/tercertiempo", {
         method: "POST",
         headers: {
           Accept: "application/json",
@@ -216,7 +216,7 @@ const SignUp = ({ route, navigation }) => {
         body: JSON.stringify(body),
       });
 
-      const responseJson = response.json();
+      const responseJson = await response.json();
 
       console.log(responseJson);
 
