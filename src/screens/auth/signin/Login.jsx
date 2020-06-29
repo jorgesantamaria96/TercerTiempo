@@ -192,7 +192,7 @@ const Login = ({ navigation }) => {
         dni: state.dni,
       };
 
-      const response = await fetch(`${mobileTT}/api/login`, {
+      const response = await fetch("http://134.122.118.141/api/login", {
         method: "POST",
         headers: {
           Accept: "application/json",
@@ -202,8 +202,9 @@ const Login = ({ navigation }) => {
       });
 
       const responseJson = await response.json();
+      
       if (responseJson.status === "200") {
-        if (responseJson.session.user.dni === parseInt(state.dni)) {
+        if (responseJson.session.user.dni === state.dni) {
           navigation.navigate("Menu", {
             dni: responseJson.session.user.dni
               ? responseJson.session.user.dni

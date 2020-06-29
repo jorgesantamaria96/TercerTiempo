@@ -207,7 +207,7 @@ const SignUp = ({ route, navigation }) => {
         mail: state.mail,
       };
 
-      const response = await fetch("https://superpago.com.ar/mobile/tercertiempo", {
+      const response = await fetch("http://134.122.118.141/users/agregar", {
         method: "POST",
         headers: {
           Accept: "application/json",
@@ -220,7 +220,7 @@ const SignUp = ({ route, navigation }) => {
 
       console.log(responseJson);
 
-      if ((responseJson.status = "200")) {
+      if (responseJson.status = "200") {
         dispatch({ type: "endLoading" });
         navigation.navigate("Wellcome", body );
       } else {
