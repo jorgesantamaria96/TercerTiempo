@@ -204,10 +204,10 @@ const SignUp = ({ route, navigation }) => {
         apellido: state.apellido,
         direccion: state.direccion,
         telefono: state.telefono,
-        mail: state.mail,
+        email: state.mail,
       };
 
-      const response = await fetch("http://134.122.118.141/users/agregar", {
+      const response = await fetch("http://134.122.118.141/users/agregar/", {
         method: "POST",
         headers: {
           Accept: "application/json",
