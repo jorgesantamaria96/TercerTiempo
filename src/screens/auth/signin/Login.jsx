@@ -202,6 +202,8 @@ const Login = ({ navigation }) => {
       });
 
       const responseJson = await response.json();
+
+      console.log(responseJson);
       
       if (responseJson.status === "200") {
         if (responseJson.session.user.dni === state.dni) {

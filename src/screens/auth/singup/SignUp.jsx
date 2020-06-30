@@ -220,11 +220,11 @@ const SignUp = ({ route, navigation }) => {
 
       console.log(responseJson);
 
-      if (responseJson.status = "200") {
+      if (responseJson.statusss === "200") {
         dispatch({ type: "endLoading" });
         navigation.navigate("Wellcome", body );
       } else {
-        Alert.alert("Error", "Por favor reintente en un instante", [
+        Alert.alert("Error", `${responseJson.message}`, [
           {
             text: "Ok",
             onPress: () => {},
