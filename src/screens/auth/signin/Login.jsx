@@ -192,7 +192,7 @@ const Login = ({ navigation }) => {
         dni: state.dni,
       };
 
-      const response = await fetch("http://134.122.118.141/api/login", {
+      const response = await fetch("https://superpago.com.ar/mobile/logintt", {
         method: "POST",
         headers: {
           Accept: "application/json",
@@ -220,7 +220,7 @@ const Login = ({ navigation }) => {
             telefono: responseJson.session.user.telefono !== null
               ? responseJson.session.user.telefono
               : "--",
-            mail: responseJson.session.user.mail
+            email: responseJson.session.user.mail
               ? responseJson.session.user.mail
               : "--",
           });

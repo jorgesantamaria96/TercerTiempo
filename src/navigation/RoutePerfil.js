@@ -9,14 +9,14 @@ import { colors } from "../constants/constants";
 const RoutePerfil = createStackNavigator();
 
 const RoutePerilComponent = ({ route, navigation }) => {
-  const { dni, nombre, apellido, telefono, mail } = route.params;
+  const { dni, nombre, apellido, telefono, email } = route.params;
 
   const userParams = {
     dni: dni,
     nombre: nombre,
     apellido: apellido,
     telefono: telefono,
-    mail: mail,
+    email: email,
   };
   return (
     <RoutePerfil.Navigator initialRouteName="Perfil">

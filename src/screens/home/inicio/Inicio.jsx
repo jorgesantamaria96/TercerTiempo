@@ -43,13 +43,13 @@ const Inicio = ({ route, navigation }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   // Datos traídos de las rutas
-  const { dni, nombre, apellido, telefono, mail, cursosData } = route.params;
+  const { dni, nombre, apellido, telefono, email, cursosData } = route.params;
   const params = {
     dni: dni,
     nombre: nombre,
     apellido: apellido,
     telefono: telefono,
-    mail: mail,
+    mail: email,
   };
   const data = cursosData;
 

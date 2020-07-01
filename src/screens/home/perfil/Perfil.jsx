@@ -11,13 +11,13 @@ import { LinearGradient } from "expo-linear-gradient";
 
 const Perfil = ({ route, navigation }) => {
   // Datos traídos de las rutas
-  const { dni, nombre, apellido, telefono, cursosData, mail } = route.params;
+  const { dni, nombre, apellido, telefono, cursosData, email } = route.params;
   const params = {
     dni: dni,
     nombre: nombre,
     apellido: apellido,
     telefono: telefono,
-    mail: mail,
+    mail: email,
   };
   const data = cursosData;
 

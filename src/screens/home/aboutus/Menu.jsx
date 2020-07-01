@@ -41,13 +41,13 @@ const Menu = ({ route, navigation }) => {
     return () => backHandler.remove();
   }, []);
 
-  const { dni, nombre, apellido, telefono, mail } = route.params;
+  const { dni, nombre, apellido, telefono, email } = route.params;
   const params = {
     dni: dni,
     nombre: nombre,
     apellido: apellido,
     telefono: telefono,
-    mail: mail,
+    mail: email,
   };
 
   const facebook = "https://www.facebook.com/fundaciontercertiemporugby/";
